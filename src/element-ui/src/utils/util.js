@@ -141,7 +141,7 @@ export const autoprefixer = function (style) {
   return style;
 };
 
-export const kebabCase = function (str) {
+export const kebabCase = function (str) {  //驼峰转换成-命名
   const hyphenateRE = /([^-])([A-Z])/g;
   return str
     .replace(hyphenateRE, '$1-$2')

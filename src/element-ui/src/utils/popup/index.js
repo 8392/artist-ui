@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import merge from '@/element-ui/src/utils/merge';
 import PopupManager from '@/element-ui/src/utils/popup/popup-manager';
-import getScrollBarWidth from '../scrollbar-width';
+import getScrollBarWidth from '../scrollbar-width';  //获取滚动条的宽度
 import { getStyle, addClass, removeClass, hasClass } from '../dom';
 
 let idSeed = 1;
@@ -17,7 +17,7 @@ export default {
     openDelay: {},
     closeDelay: {},
     zIndex: {},
-    modal: {
+    modal: { //是否需要遮罩层
       type: Boolean,
       default: false
     },
@@ -126,6 +126,7 @@ export default {
       }
 
       if (modal) {
+        console.log("model", this._closing)
         if (this._closing) {
           PopupManager.closeModal(this._popupId);
           this._closing = false;
@@ -138,6 +139,7 @@ export default {
             this.computedBodyPaddingRight = parseInt(getStyle(document.body, 'paddingRight'), 10);
           }
           scrollBarWidth = getScrollBarWidth();
+          console.log("scrollBarWidth", scrollBarWidth)
           let bodyHasOverflow = document.documentElement.clientHeight < document.body.scrollHeight;
           let bodyOverflowY = getStyle(document.body, 'overflowY');
           if (scrollBarWidth > 0 && (bodyHasOverflow || bodyOverflowY === 'scroll') && this.withoutHiddenClass) {

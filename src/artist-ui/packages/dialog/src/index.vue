@@ -28,6 +28,9 @@ export default {
       if(val) {
         // this.$el.app
         // document.body.appendChild(this.$el)
+        document.body.style.overflow = 'hidden'
+      }else {
+        document.body.style.overflow = 'visible'
       }
     }
   },
@@ -51,7 +54,7 @@ export default {
   background: #fff;
   width: 50%;
   // margin: 0 auto;
-  margin: 0 auto 50px;
+  margin: 100px auto 50px;
   min-height: 400px;
   box-sizing: border-box;
   border-radius: 5px;

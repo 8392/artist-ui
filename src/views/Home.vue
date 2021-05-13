@@ -50,7 +50,7 @@ export default {
   background: #f1f1f1;
 }
 .dialog-main{
-  height: 500px;
+  height: 350px;
   background: #ddd;
 }
 

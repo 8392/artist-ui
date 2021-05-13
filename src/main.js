@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from '@/router'
 import store from './store'
 import ArtistUi from './artist-ui/index.js'
+import './style/common.scss' //默认样式
 import './artist-ui/theme-chalk/index.scss'
 // import ElementUi from './element-ui/src'
 import ElementUI from './element-ui/src'
