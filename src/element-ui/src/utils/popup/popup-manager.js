@@ -33,17 +33,17 @@ const instances = {};
 const PopupManager = {
   modalFade: true,
 
-  getInstance: function (id) {
+  getInstance: function (id) { //获取
     return instances[id];
   },
 
-  register: function (id, instance) {
+  register: function (id, instance) { //添加
     if (id && instance) {
       instances[id] = instance;
     }
   },
 
-  deregister: function (id) {
+  deregister: function (id) {  //删除
     if (id) {
       instances[id] = null;
       delete instances[id];
@@ -66,8 +66,9 @@ const PopupManager = {
     }
   },
 
+  /* 添加模态框 */
   openModal: function (id, zIndex, dom, modalClass, modalFade) {
-    if (Vue.prototype.$isServer) return;
+    if (Vue.prototype.$isServer) return;  //是否运行于服务器
     if (!id || zIndex === undefined) return;
     this.modalFade = modalFade;
 
@@ -97,6 +98,7 @@ const PopupManager = {
     if (dom && dom.parentNode && dom.parentNode.nodeType !== 11) {
       dom.parentNode.appendChild(modalDom);
     } else {
+      //默认遮罩层插入body元素上
       document.body.appendChild(modalDom);
     }
 
@@ -107,8 +109,10 @@ const PopupManager = {
     modalDom.style.display = '';
 
     this.modalStack.push({ id: id, zIndex: zIndex, modalClass: modalClass });
+    console.log("modalStack", this.modalStack)
   },
 
+  /* 删除模态框 */
   closeModal: function (id) {
     const modalStack = this.modalStack;
     const modalDom = getModal();
@@ -151,7 +155,7 @@ const PopupManager = {
   }
 };
 
-Object.defineProperty(PopupManager, 'zIndex', {
+Object.defineProperty(PopupManager, 'zIndex', {  //定义默认的层级
   configurable: true,
   get () {
     if (!hasInitZIndex) {
@@ -165,7 +169,9 @@ Object.defineProperty(PopupManager, 'zIndex', {
   }
 });
 
-const getTopPopup = function () {
+// console.log("PopupManager", PopupManager)
+
+const getTopPopup = function () {  //获取当前模态框Vue实例
   if (Vue.prototype.$isServer) return;
   if (PopupManager.modalStack.length > 0) {
     const topPopup = PopupManager.modalStack[PopupManager.modalStack.length - 1];
@@ -181,7 +187,6 @@ if (!Vue.prototype.$isServer) {
   window.addEventListener('keydown', function (event) {
     if (event.keyCode === 27) {
       const topPopup = getTopPopup();
-
       if (topPopup && topPopup.closeOnPressEscape) {
         topPopup.handleClose
           ? topPopup.handleClose()

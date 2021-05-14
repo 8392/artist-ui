@@ -21,7 +21,7 @@ export default {
       type: Boolean,
       default: false
     },
-    modalFade: {
+    modalFade: {  //模态框是否淡出效果
       type: Boolean,
       default: true
     },
@@ -97,7 +97,6 @@ export default {
         this._closeTimer = null;
       }
       clearTimeout(this._openTimer);
-
       const openDelay = Number(props.openDelay);
       if (openDelay > 0) {
         this._openTimer = setTimeout(() => {
@@ -132,7 +131,7 @@ export default {
           this._closing = false;
         }
         PopupManager.openModal(this._popupId, PopupManager.nextZIndex(), this.modalAppendToBody ? undefined : dom, props.modalClass, props.modalFade);
-        if (props.lockScroll) {
+        if (props.lockScroll) {//遮罩层下面的内容是否可以滚动
           this.withoutHiddenClass = !hasClass(document.body, 'el-popup-parent--hidden');
           if (this.withoutHiddenClass) {
             this.bodyPaddingRight = document.body.style.paddingRight;
@@ -142,6 +141,7 @@ export default {
           console.log("scrollBarWidth", scrollBarWidth)
           let bodyHasOverflow = document.documentElement.clientHeight < document.body.scrollHeight;
           let bodyOverflowY = getStyle(document.body, 'overflowY');
+          // 防止页面出口抖动
           if (scrollBarWidth > 0 && (bodyHasOverflow || bodyOverflowY === 'scroll') && this.withoutHiddenClass) {
             document.body.style.paddingRight = this.computedBodyPaddingRight + scrollBarWidth + 'px';
           }
@@ -153,7 +153,7 @@ export default {
         dom.style.position = 'absolute';
       }
 
-      dom.style.zIndex = PopupManager.nextZIndex();
+      dom.style.zIndex = PopupManager.nextZIndex();  //设置模态框dialog的z-index,在遮罩层的上面再加1
       this.opened = true;
 
       this.onOpen && this.onOpen();

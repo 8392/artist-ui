@@ -1,7 +1,12 @@
-function broadcast (componentName, eventName, params) {
-  this.$children.forEach(child => {
-    var name = child.$options.componentName;
+// root 相当于eventbus参数传递，但是不用引入eventBus实例
 
+function broadcast (componentName, eventName, params) {
+  // 遍历所有子组件
+  this.$children.forEach(child => {
+    const name = child.$options.componentName;
+
+    // 找到组件名为componentName的子组件，并调用该子组件的$emit方法；
+    // 否则，继续递归
     if (name === componentName) {
       child.$emit.apply(child, [eventName].concat(params));
     } else {
@@ -12,8 +17,10 @@ function broadcast (componentName, eventName, params) {
 export default {
   methods: {
     dispatch (componentName, eventName, params) {
-      var parent = this.$parent || this.$root;
-      var name = parent.$options.componentName;
+      // 当前父组件
+      let parent = this.$parent || this.$root;
+      //当前父组件的组件名
+      let name = parent.$options.componentName;
 
       while (parent && (!name || name !== componentName)) {
         parent = parent.$parent;

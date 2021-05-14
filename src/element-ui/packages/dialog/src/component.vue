@@ -68,7 +68,7 @@
         default: false
       },
 
-      lockScroll: {
+      lockScroll: {  //遮罩层下面的内容是否可以滚动
         type: Boolean,
         default: true
       },
@@ -119,7 +119,7 @@
 
     watch: {
       visible(val) {
-        console.log("val", this.$el)
+        // console.log("val", this.$el)
         if (val) {
           this.closed = false;
           this.$emit('open');
@@ -175,13 +175,15 @@
         }
       },
       hide(cancel) {
+        console.log("cnncecel", cancel)
         if (cancel !== false) {
-          this.$emit('update:visible', false);
+          this.$emit('update:visible', false); //触发visible改变，再次导致watch的监听，触发模态框的关闭
           this.$emit('close');
           this.closed = true;
         }
       },
       updatePopper() {
+        console.log("滚动")
         this.broadcast('ElSelectDropdown', 'updatePopper');
         this.broadcast('ElDropdownMenu', 'updatePopper');
       },
