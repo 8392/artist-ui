@@ -13,9 +13,13 @@
 
   @include e(tail) {
     position: absolute;
+    z-index: 999;
     left: 4px;
-    height: 100%;
+    // height: 100%;
+    height: calc(100% - 10px - 20px);
+    top: 20px;
     border-left: 2px solid $--timeline-node-color;
+
   }
 
   @include e(icon) {

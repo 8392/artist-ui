@@ -3,7 +3,7 @@
     <el-button @click="open">打开</el-button>
     <el-button type="primary" plain @click="testMeth">测试</el-button>
     <el-button type="primary" plain @click="testMeth2">测试2</el-button>
-    <div :key='x' v-for="x in 50">阿达开始的黄金卡时间看到</div>
+    <!-- <div :key='x' v-for="x in 50">阿达开始的黄金卡时间看到</div> -->
     <!-- <at-dialog :visible.sync='visible'>
       <div>我的外部的</div>
       <el-button @click="insidShow = true">打开内部的</el-button>
@@ -29,6 +29,27 @@
     <el-tooltip class="item" effect="dark" content="Top Center 提示文字" placement="top">
       <el-button>上边</el-button>
     </el-tooltip>
+
+    <div style="width: 200px; margin: auto">
+      <el-timeline>
+        <el-timeline-item>
+          <div>666</div>
+          <div>222</div>
+          <div>666</div>
+          <template #dot>
+            <div class="dot"></div>
+          </template>
+        </el-timeline-item>
+        <el-timeline-item>
+          <div>666</div>
+          <div>666</div>
+          <div>666</div>
+          <template #dot>
+            <div class="dot"></div>
+          </template>
+        </el-timeline-item>
+      </el-timeline>
+    </div>
   </div>
 </template>
 
@@ -50,7 +71,17 @@ export default {
       visible: false,
       insidShow: false,
       outerVisible: false,
-      innerVisible: false
+      innerVisible: false,
+      activities: [{
+        content: '活动按期开始',
+        timestamp: '2018-04-15'
+      }, {
+        content: '通过审核',
+        timestamp: '2018-04-13'
+      }, {
+        content: '创建成功',
+        timestamp: '2018-04-11'
+      }]
     }
   },
   wattch: {
@@ -78,3 +109,12 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.dot{
+  width: 10px;
+  height: 10px;
+  background: #f00;
+  border-radius: 50%;
+}
+</style>

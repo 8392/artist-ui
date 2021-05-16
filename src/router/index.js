@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import rightdialog from '../views/rightdialog.vue'
+import poper from '../views/poper.vue'
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,11 @@ const routes = [
     path: '/rightdialog',
     name: 'rightdialog',
     component: rightdialog
+  },
+  {
+    path: '/poper',
+    name: 'poper',
+    component: poper
   },
   {
     path: '/about',
