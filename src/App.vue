@@ -4,6 +4,7 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
       <router-link to="/poper">poper</router-link> |
+      <router-link to="/treePage">treePage</router-link> |
       <router-link to="/rightdialog">right-dialog</router-link>
     </div>
     <router-view />

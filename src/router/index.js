@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import rightdialog from '../views/rightdialog.vue'
 import poper from '../views/poper.vue'
+import treePage from '../views/treePage/index.vue'
 
 Vue.use(VueRouter)
 
@@ -21,6 +22,11 @@ const routes = [
     path: '/poper',
     name: 'poper',
     component: poper
+  },
+  {
+    path: '/treePage',
+    name: 'treePage',
+    component: treePage
   },
   {
     path: '/about',

@@ -271,6 +271,7 @@
       },
 
       handleNodeExpand(nodeData, node, instance) {
+        // console.log("nodeData", this.root)
         this.broadcast('ElTreeNode', 'tree-node-expand', node);
         this.$emit('node-expand', nodeData, node, instance);
       },
@@ -339,6 +340,8 @@
       });
 
       this.root = this.store.root;
+
+      console.log("root", this.root)
 
       let dragState = this.dragState;
       this.$on('tree-node-drag-start', (event, treeNode) => {

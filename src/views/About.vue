@@ -50,24 +50,47 @@
         </el-timeline-item>
       </el-timeline>
     </div>
+    <!-- <div :aria-hidden='true' @click="handleClick">
+      测试新元素
+    </div> -->
+    <el-tree :data="data" :props="defaultProps" @node-click="handleNodeClick"></el-tree>
+    <el-button @click="openHeight">打开</el-button>
+    <el-collapse-transition>
+      <div class="testHeight" v-if="isHeight">
+
+      </div>
+    </el-collapse-transition>
+    <!-- <div :class="['testHeight', {'isActive' : isHeight}]" >
+
+    </div> -->
+    <TestJsx>
+      <div>
+        <span>666</span>
+      </div>
+    </TestJsx>
   </div>
 </template>
 
 <script>
 
-
+import ElCollapseTransition from '@/element-ui/src/transitions/collapse-transition'
 import emitter from '@/element-ui/src/mixins/emitter'
 import Test1 from './components/Test1'
 import Test2 from './components/Test2'
+import TestJsx from './components/TestJsx.js'
 export default {
   componentName: 'about',
   components: {
     Test1,
-    Test2
+    Test2,
+    TestJsx,
+    ElCollapseTransition
   },
   mixins: [ emitter],
   data() {
     return {
+      isActive: false,
+      isHeight: false,
       visible: false,
       insidShow: false,
       outerVisible: false,
@@ -81,7 +104,46 @@ export default {
       }, {
         content: '创建成功',
         timestamp: '2018-04-11'
-      }]
+      }],
+      data: [{
+          label: '一级 1',
+          children: [{
+            label: '二级 1-1',
+            children: [{
+              label: '三级 1-1-1'
+            }]
+          }]
+        }, {
+          label: '一级 2',
+          children: [{
+            label: '二级 2-1',
+            children: [{
+              label: '三级 2-1-1'
+            }]
+          }, {
+            label: '二级 2-2',
+            children: [{
+              label: '三级 2-2-1'
+            }]
+          }]
+        }, {
+          label: '一级 3',
+          children: [{
+            label: '二级 3-1',
+            children: [{
+              label: '三级 3-1-1'
+            }]
+          }, {
+            label: '二级 3-2',
+            children: [{
+              label: '三级 3-2-1'
+            }]
+          }]
+        }],
+        defaultProps: {
+          children: 'children',
+          label: 'label'
+        }
     }
   },
   wattch: {
@@ -91,6 +153,12 @@ export default {
     this.$on('submenu', this.handleSubmenuClick)
   },
   methods: {
+    openHeight () {
+      this.isHeight = !this.isHeight
+    },
+    handleNodeClick(data) {
+      console.log(data)
+    },
     open () {
       // this.visible = true
       console.log('child', this.$children)
@@ -105,6 +173,9 @@ export default {
     },
     handleSubmenuClick(val) {
       console.log('handleSubmenuClick', val)
+    },
+    handleClick (e) {
+      console.log('点击', e)
     }
   }
 }
@@ -116,5 +187,15 @@ export default {
   height: 10px;
   background: #f00;
   border-radius: 50%;
+}
+.testHeight{
+  background: rgb(216, 241, 122);
+  height: 400px;
+  width: 300px;
+  transition: height .5s;
+}
+.isActive {
+  height: 0;
+  overflow: hidden;
 }
 </style>

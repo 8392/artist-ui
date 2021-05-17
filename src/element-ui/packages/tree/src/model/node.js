@@ -100,7 +100,7 @@ export default class Node {
     if (props && typeof props.isLeaf !== 'undefined') {
       const isLeaf = getPropertyFromData(this, 'isLeaf');
       if (typeof isLeaf === 'boolean') {
-        this.isLeafByUser = isLeaf;
+        this.isLeafByUser = isLeaf; //指定节点是否为叶子节点
       }
     }
 
@@ -114,7 +114,7 @@ export default class Node {
       this.expand();
     }
     if (!Array.isArray(this.data)) {
-      markNodeData(this, this.data);
+      markNodeData(this, this.data);  //添加nodeKey
     }
     if (!this.data) return;
     const defaultExpandedKeys = store.defaultExpandedKeys;
@@ -297,7 +297,7 @@ export default class Node {
     }
   }
 
-  expand (callback, expandParent) {
+  expand (callback, expandParent) {  //设置expanded为true，展开状态
     const done = () => {
       if (expandParent) {
         let parent = this.parent;
@@ -332,7 +332,7 @@ export default class Node {
     });
   }
 
-  collapse () {
+  collapse () {  ////设置expanded为false，关闭状态
     this.expanded = false;
   }
 

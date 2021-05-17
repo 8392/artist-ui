@@ -70,7 +70,7 @@
       icon: String
     },
     mounted() {
-      console.log("$slots", this.$slots.dot)
+      // console.log("$slots", this.$slots.dot)
     }
   };
 </script>
