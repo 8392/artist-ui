@@ -1,17 +1,24 @@
 <template>
   <div class="tree">
     <div class="tree-title" :key="index" v-for="(item, index) in data">
-      {{item.label}}
-      <Item class="tree-item" :data='item.children'  v-if="item.children && item.children.length > 0" />
+      <div class="tree-title-label" @click="handleFirst(item, index)">
+          {{item.label}}
+      </div>
+      <el-collapse-transition>
+        <Item class="tree-item" v-show="item.expaned" :data.sync='item.children'  />
+      </el-collapse-transition>
     </div>
   </div>
 </template>
 
 <script>
+import ElCollapseTransition from '@/element-ui/src/transitions/collapse-transition'
+
 import Item from './item'
 export default {
   components: {
-    Item
+    Item,
+    ElCollapseTransition
   },
   props: {
     data: {
@@ -44,9 +51,22 @@ export default {
             getData(val[children], level+1)
           }
           val.level = level
+          val.expaned = false
         }
       }
       getData(this.data)
+    },
+    handleFirst (data, index) {
+      // console.log('data', data, index)
+      if(data.expaned) {
+        data.expaned = false
+      }else {
+        data.expaned = true
+      }
+      this.data[index] = data
+      // this.data = copyData
+      // console.log('data',this.data, data)
+      this.$set(this.data, index, data)
     }
   }
 }
@@ -62,8 +82,8 @@ export default {
 .tree-title{
   line-height: 35px;
   color: #f00;
-}
-.tree-item{
-  // padding-left: 20px;
+  &-label {
+    cursor: pointer;
+  }
 }
 </style>

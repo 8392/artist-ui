@@ -50,7 +50,25 @@ export default {
       defaultProps: {
         children: 'children',
         label: 'label'
+      },
+      arrData: {
+        a: 1,
+        b: 2
       }
+    }
+  },
+  watch: {
+    data: {
+      handler(val) {
+        console.log('监听data', val)
+      },  
+      deep: true
+    }
+  },
+  methods: {
+    clickMenu(index) {
+      this.arrData[index] = 66
+      // this.arrData.push(20)
     }
   }
 }

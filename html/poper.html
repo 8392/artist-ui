@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Popper Tutorial</title>
+    <style>
+        .main{
+            padding-top:  500px;
+        }
+        #button{
+            position: absolute;
+            top: 500px;
+        }
+    </style>
+  </head>
+  <body>
+      <div class="main"></div>
+    <button id="button" aria-describedby="tooltip">My button</button>
+    <div id="tooltip" role="tooltip">My tooltip</div>
+    <div class="main"></div>
+
+
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script>
+      const button = document.querySelector('#button');
+      const tooltip = document.querySelector('#tooltip');
+
+      const popperInstance = Popper.createPopper(button, tooltip);
+      const popperEle = popperInstance.state.elements.popper
+      popperEle.style.zIndex = 1000
+      console.log("popperInstance", popperEle)
+    </script>
+  </body>
+</html>

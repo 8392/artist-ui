@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import rightdialog from '../views/rightdialog.vue'
 import poper from '../views/poper.vue'
 import treePage from '../views/treePage/index.vue'
+import tab from '../views/tab/index.vue'
 
 Vue.use(VueRouter)
 
@@ -27,6 +28,11 @@ const routes = [
     path: '/treePage',
     name: 'treePage',
     component: treePage
+  },
+  {
+    path: '/tab',
+    name: 'tab',
+    component: tab
   },
   {
     path: '/about',

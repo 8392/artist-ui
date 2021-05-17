@@ -1,5 +1,6 @@
 import { once, on } from '@/element-ui/src/utils/dom';
 
+// 鼠标按下去时，一直触发这个函数
 export default {
   bind (el, binding, vnode) {
     let interval = null;

@@ -125,12 +125,13 @@ export default {
       }
 
       if (modal) {
-        console.log("model", this._closing)
+        // console.log("model", this._closing)
         if (this._closing) {
           PopupManager.closeModal(this._popupId);
           this._closing = false;
         }
         PopupManager.openModal(this._popupId, PopupManager.nextZIndex(), this.modalAppendToBody ? undefined : dom, props.modalClass, props.modalFade);
+        
         if (props.lockScroll) {//遮罩层下面的内容是否可以滚动
           this.withoutHiddenClass = !hasClass(document.body, 'el-popup-parent--hidden');
           if (this.withoutHiddenClass) {
@@ -138,7 +139,6 @@ export default {
             this.computedBodyPaddingRight = parseInt(getStyle(document.body, 'paddingRight'), 10);
           }
           scrollBarWidth = getScrollBarWidth();
-          console.log("scrollBarWidth", scrollBarWidth)
           let bodyHasOverflow = document.documentElement.clientHeight < document.body.scrollHeight;
           let bodyOverflowY = getStyle(document.body, 'overflowY');
           // 防止页面出口抖动

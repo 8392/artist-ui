@@ -2,6 +2,7 @@
   <div class="home">
     <!-- <at-button>测试</at-button> -->
     <el-button type="primary" plain @click="dialogVisible = true">主要按钮</el-button>
+    <el-button type="primary" plain v-repeat-click="moreClickTest">测试多次点击</el-button>
     <!-- <div :key='x' v-for="x in 60">阿达开始的黄金卡时间看到</div> -->
     <el-dialog
       title="提示"
@@ -53,9 +54,15 @@
 </template>
 
 <script>
+
+import RepeatClick from '@/element-ui/src/directives/repeat-click'
+
 export default {
   name: 'Home',
   components: {},
+  directives: {
+    repeatClick: RepeatClick
+  },
   data() {
     return {
       innerShow: false,
@@ -78,6 +85,9 @@ export default {
     //       done()
     //     })
     // }
+    moreClickTest () {
+      console.log('测试')
+    }
 
   }
 }
@@ -89,7 +99,7 @@ export default {
   background: #f1f1f1;
 }
 .dialog-main{
-  height: 800px;
+  height: 300px;
   background: #ddd;
 }
 

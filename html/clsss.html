@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active1 {
+            color: #f00;
+        }
+        .active2 {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="nav" class="active1">测试001</div>
+    </div>
+    <script>    
+        const nav = document.querySelector('#nav')
+        // console.log(nav)
+        nav.classList.add('active2')
+        // nav.classList.remove('active1')
+        const res = nav.classList.contains('active2')
+        // console.log(res)
+    </script>
+</body>
+</html>
