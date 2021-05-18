@@ -1,11 +1,17 @@
 <template>
   <div>
     <tree :data='data' :defaultProps='defaultProps' />
+    <el-button @click="handleClick">点击</el-button>
+    <div>
+      <!-- <div v-for="x in arrData">{{x}}</div> -->
+      <div ref="nameRef">{{name}}</div>
+    </div>
   </div>
 </template>
 
 <script>
-import tree from './tree'
+// import Vue from 'vue'
+import tree from './tree/index.vue'
 export default {
   components: {
     tree
@@ -51,6 +57,7 @@ export default {
         children: 'children',
         label: 'label'
       },
+      name: '成都',
       arrData: {
         a: 1,
         b: 2
@@ -61,7 +68,7 @@ export default {
     data: {
       handler(val) {
         console.log('监听data', val)
-      },  
+      },
       deep: true
     }
   },
@@ -69,6 +76,19 @@ export default {
     clickMenu(index) {
       this.arrData[index] = 66
       // this.arrData.push(20)
+    },
+    changeData () {
+
+    },
+    handleClick () {
+      // console.log(99)
+      this.name = '重庆'
+      const nameRef = this.$refs.nameRef.innerText
+      // console.log("nameRef1", nameRef)
+      // Vue.nextTick(() => {
+      //   const nameRef = this.$refs.nameRef.innerText
+      //   console.log("nameRef2", nameRef)
+      // })
     }
   }
 }

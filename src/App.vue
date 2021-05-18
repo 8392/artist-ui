@@ -11,6 +11,23 @@
     <router-view />
   </div>
 </template>
+<script>
+export default {
+  componentName: 'appName',
+  data() {
+    return {
+
+    }
+  },
+  mounted() {
+    window.vm = this
+    console.log('this', this.$options.methods)
+  },
+  methods: {
+
+  }
+}
+</script>
 
 <style>
 #app {
