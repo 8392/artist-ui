@@ -11,17 +11,17 @@
                 <div>{{item.name}}</div>
             </div>
 	    </scrollBar>
-    <vue-tabs-swiper>
-        <div tab-label="热点">热点</div>
-        <div tab-label="发现">发现</div>
-        <div tab-label="关注">关注</div>
-        <div tab-label="成都">成都</div>
-        <div tab-label="北京">北京</div>
-        <div tab-label="上海">上海</div>
-        <div tab-label="上海">上海</div>
-        <div tab-label="上海">上海</div>
-        <div tab-label="上海">上海</div>
-    </vue-tabs-swiper>
+    <el-tabs v-model="activeName" @tab-click="handleClick">
+        <el-tab-pane label="用户管理" name="first">用户管理</el-tab-pane>
+        <el-tab-pane label="配置管理" name="second">配置管理</el-tab-pane>
+        <el-tab-pane label="角色管理" name="third">角色管理</el-tab-pane>
+        <el-tab-pane label="定时任务补偿" name="fourth1">定时任务补偿</el-tab-pane>
+        <el-tab-pane label="定时任务补偿" name="fourth2">定时任务补偿</el-tab-pane>
+        <el-tab-pane label="定时任务补偿" name="fourth3">定时任务补偿</el-tab-pane>
+        <el-tab-pane label="定时任务补偿" name="fourth4">定时任务补偿</el-tab-pane>
+        <el-tab-pane label="定时任务补偿" name="fourt5">定时任务补偿</el-tab-pane>
+        <el-tab-pane label="定时任务补偿" name="fourt6h">定时任务补偿</el-tab-pane>
+    </el-tabs>
     </div>
 </template>
 <script>
@@ -37,6 +37,7 @@ export default {
     data() {
         return {
             activeIndex: 0,
+            activeName: 'second',
             options: [
                 {id: 1, name: '关注'},
                 {id: 2, name: '推荐'},
@@ -53,13 +54,14 @@ export default {
     methods: {
         changeNav(item, index) {
             this.activeIndex = index
-        }
+        },
+        handleClick() {}
     }
 }
 </script>
 <style lang="scss" scoped>
 .page{
-    width: 200px;
+    width: 400px;
     overflow: auto;
 }
 .scrollBarItem {
