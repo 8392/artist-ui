@@ -74,9 +74,10 @@
 <script>
 
 import ElCollapseTransition from '@/element-ui/src/transitions/collapse-transition'
-import emitter from '@/element-ui/src/mixins/emitter'
+import emitter from '@/element-ui/src/mixins/emitter.js'
+// import emitter from '@/view'
 import Test1 from './components/Test1'
-import Test2 from './components/Test2'
+import Test2 from './components/Test2.vue'
 import TestJsx from './components/TestJsx.js'
 export default {
   componentName: 'about',

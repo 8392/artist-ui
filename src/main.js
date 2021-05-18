@@ -1,4 +1,5 @@
-import Vue from 'vue'
+// import Vue from 'vue'
+import Vue from '@/vue/src/platforms/web/entry-runtime-with-compiler'
 import App from './App.vue'
 import router from '@/router'
 import store from './store'
@@ -18,8 +19,11 @@ Vue.use(ArtistUi)
 
 Vue.use(ElementUI, { size: 'small' })
 
+console.log("Vue", Vue)
+
 new Vue({
   router,
   store,
   render: (h) => h(App),
+  // render: (h) => <App />
 }).$mount('#app')

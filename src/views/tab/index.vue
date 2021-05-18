@@ -28,7 +28,6 @@
 // 先导入再注册下
 import scrollBar from './tab'
 import VueTabsSwiper from 'vue-tabs-swiper'
-console.log("VueTabsSwipe", VueTabsSwiper)
 export default {
     components: {
         scrollBar,
