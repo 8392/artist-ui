@@ -4,7 +4,10 @@
     <el-button @click="handleClick">点击</el-button>
     <div>
       <!-- <div v-for="x in arrData">{{x}}</div> -->
-      <div ref="nameRef">{{name}}</div>
+      <!-- <div ref="nameRef">{{name}}</div> -->
+      <Tets1 />
+      <!-- <Test2 /> -->
+
     </div>
   </div>
 </template>
@@ -14,7 +17,21 @@
 import tree from './tree/index.vue'
 export default {
   components: {
-    tree
+    tree,
+    Test2: {
+      render (createElement) {
+        return (
+          createElement('div', 'Test2')
+        )
+      }
+    },
+    Tets1: {
+      render (createElement) {
+        return (
+          createElement('el-button', 66)
+        )
+      }
+    }
   },
   data() {
     return {

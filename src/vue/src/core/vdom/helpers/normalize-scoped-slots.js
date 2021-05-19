@@ -1,8 +1,8 @@
 /* @flow */
 
-import { def } from '@/vue/src/core/util/lang'
-import { normalizeChildren } from '@/vue/src/core/vdom/helpers/normalize-children'
-import { emptyObject } from '@/vue/src/shared/util'
+import { def } from 'core/util/lang'
+import { normalizeChildren } from 'core/vdom/helpers/normalize-children'
+import { emptyObject } from 'shared/util'
 
 export function normalizeScopedSlots (
   slots: { [key: string]: Function } | void,
@@ -54,7 +54,7 @@ export function normalizeScopedSlots (
   return res
 }
 
-function normalizeScopedSlot (normalSlots, key, fn) {
+function normalizeScopedSlot(normalSlots, key, fn) {
   const normalized = function () {
     let res = arguments.length ? fn.apply(null, arguments) : fn({})
     res = res && typeof res === 'object' && !Array.isArray(res)
@@ -79,6 +79,6 @@ function normalizeScopedSlot (normalSlots, key, fn) {
   return normalized
 }
 
-function proxyNormalSlot (slots, key) {
+function proxyNormalSlot(slots, key) {
   return () => slots[key]
 }

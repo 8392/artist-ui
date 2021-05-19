@@ -1,7 +1,7 @@
 /* @flow */
 
-import { isDef, isUndef, extend, toNumber } from '@/vue/src/shared/util'
-import { isSVG } from '@/vue/src/platforms/web/util/index'
+import { isDef, isUndef, extend, toNumber } from 'shared/util'
+import { isSVG } from 'web/util/index'
 
 let svgContainer
 
@@ -70,12 +70,12 @@ function updateDOMProps (oldVnode: VNodeWithData, vnode: VNodeWithData) {
       // e.g. `value` on <progress> w/ non-finite value
       try {
         elm[key] = cur
-      } catch (e) { }
+      } catch (e) {}
     }
   }
 }
 
-// check platforms/@/vue/src/platforms/web/util/attrs.js acceptValue
+// check platforms/web/util/attrs.js acceptValue
 type acceptValueElm = HTMLInputElement | HTMLSelectElement | HTMLOptionElement;
 
 function shouldUpdateValue (elm: acceptValueElm, checkVal: string): boolean {
@@ -92,7 +92,7 @@ function isNotInFocusAndDirty (elm: acceptValueElm, checkVal: string): boolean {
   let notInFocus = true
   // #6157
   // work around IE bug when accessing document.activeElement in an iframe
-  try { notInFocus = document.activeElement !== elm } catch (e) { }
+  try { notInFocus = document.activeElement !== elm } catch (e) {}
   return notInFocus && elm.value !== checkVal
 }
 

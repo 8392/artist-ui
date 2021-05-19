@@ -1,6 +1,6 @@
 /* @flow */
 
-// import { warn } from '@/vue/src/core/util/index'
+// import { warn } from 'core/util/index'
 
 // this will be preserved during build
 // $flow-disable-line

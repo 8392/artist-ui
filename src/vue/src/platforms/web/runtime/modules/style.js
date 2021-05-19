@@ -1,7 +1,7 @@
 /* @flow */
 
-import { getStyle, normalizeStyleBinding } from '@/vue/src/platforms/web/util/style'
-import { cached, camelize, extend, isDef, isUndef, hyphenate } from '@/vue/src/shared/util'
+import { getStyle, normalizeStyleBinding } from 'web/util/style'
+import { cached, camelize, extend, isDef, isUndef, hyphenate } from 'shared/util'
 
 const cssVarRE = /^--/
 const importantRE = /\s*!important$/

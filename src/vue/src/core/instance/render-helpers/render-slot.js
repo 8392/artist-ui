@@ -1,6 +1,6 @@
 /* @flow */
 
-import { extend, warn, isObject } from '@/vue/src/core/util/index'
+import { extend, warn, isObject } from 'core/util/index'
 
 /**
  * Runtime helper for rendering <slot>

@@ -3,13 +3,13 @@
 // Provides transition support for a single element/component.
 // supports transition mode (out-in / in-out)
 
-import { warn } from '@/vue/src/core/util/index'
-import { camelize, extend, isPrimitive } from '@/vue/src/shared/util'
+import { warn } from 'core/util/index'
+import { camelize, extend, isPrimitive } from 'shared/util'
 import {
   mergeVNodeHook,
   isAsyncPlaceholder,
   getFirstComponentChild
-} from '@/vue/src/core/vdom/helpers/index'
+} from 'core/vdom/helpers/index'
 
 export const transitionProps = {
   name: String,

@@ -1,6 +1,6 @@
 /* @flow */
 
-import { remove, isDef } from '@/vue/src/shared/util'
+import { remove, isDef } from 'shared/util'
 
 export default {
   create (_: any, vnode: VNodeWithData) {

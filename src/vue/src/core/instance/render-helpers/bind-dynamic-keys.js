@@ -9,7 +9,7 @@
 //
 // _c('div', { attrs: bindDynamicKeys({ "id": "app" }, [key, value]) })
 
-import { warn } from '@/vue/src/core/util/debug'
+import { warn } from 'core/util/debug'
 
 export function bindDynamicKeys (baseObj: Object, values: Array<any>): Object {
   for (let i = 0; i < values.length; i += 2) {

@@ -1,4 +1,4 @@
-import { warn, extend } from '@/vue/src/core/util/index'
+import { warn, extend } from 'core/util/index'
 import { transitionProps, extractTransitionData } from './transition'
 
 const props = extend({
@@ -43,7 +43,7 @@ export default {
         if (c.key != null && String(c.key).indexOf('__vlist') !== 0) {
           children.push(c)
           map[c.key] = c
-            ; (c.data || (c.data = {})).transition = transitionData
+          ;(c.data || (c.data = {})).transition = transitionData
         } else if (process.env.NODE_ENV !== 'production') {
           const opts = c.componentOptions
           const name = opts

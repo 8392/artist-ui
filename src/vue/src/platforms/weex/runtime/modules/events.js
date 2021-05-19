@@ -1,6 +1,6 @@
 /* @flow */
 
-import { updateListeners } from '@/vue/src/core/vdom/helpers/update-listeners'
+import { updateListeners } from 'core/vdom/helpers/update-listeners'
 
 let target: any
 

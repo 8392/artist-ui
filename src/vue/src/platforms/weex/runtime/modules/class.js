@@ -1,6 +1,6 @@
 /* @flow */
 
-import { extend, isObject } from '@/vue/src/shared/util'
+import { extend, isObject } from 'shared/util'
 
 function updateClass (oldVnode: VNodeWithData, vnode: VNodeWithData) {
   const el = vnode.elm

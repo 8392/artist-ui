@@ -6,16 +6,16 @@ import {
   isDef,
   isUndef,
   extend
-} from '@/vue/src/shared/util'
+} from 'shared/util'
 
 import {
   isBooleanAttr,
   isEnumeratedAttr,
   isFalsyAttrValue,
   convertEnumeratedValue
-} from '@/vue/src/platforms/web/util/attrs'
+} from 'web/util/attrs'
 
-import { isSSRUnsafeAttr } from '@/vue/src/platforms/web/server/util'
+import { isSSRUnsafeAttr } from 'web/server/util'
 
 export default function renderAttrs (node: VNodeWithData): string {
   let attrs = node.data.attrs

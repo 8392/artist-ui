@@ -1,6 +1,6 @@
 /* @flow */
 
-import { makeMap } from '@/vue/src/shared/util'
+import { makeMap } from 'shared/util'
 
 export const isUnaryTag = makeMap(
   'area,base,br,col,embed,frame,hr,img,input,isindex,keygen,' +

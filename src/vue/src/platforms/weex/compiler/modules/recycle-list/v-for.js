@@ -1,7 +1,7 @@
 /* @flow */
 
-import { parseFor } from '@/vue/src/compiler/parser/index'
-import { getAndRemoveAttr, addRawAttr } from '@/vue/src/compiler/helpers'
+import { parseFor } from 'compiler/parser/index'
+import { getAndRemoveAttr, addRawAttr } from 'compiler/helpers'
 
 export function preTransformVFor (el: ASTElement, options: WeexCompilerOptions) {
   const exp = getAndRemoveAttr(el, 'v-for')

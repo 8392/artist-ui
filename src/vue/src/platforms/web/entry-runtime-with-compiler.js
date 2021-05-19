@@ -1,12 +1,12 @@
 /* @flow */
 
-import config from '@/vue/src/core/config'
-import { warn, cached } from '@/vue/src/core/util/index'
-import { mark, measure } from '@/vue/src/core/util/perf'
+import config from 'core/config'
+import { warn, cached } from 'core/util/index'
+import { mark, measure } from 'core/util/perf'
 
 import Vue from './runtime/index'
 import { query } from './util/index'
-import { compileToFunctions } from '@/vue/src/compiler/index'
+import { compileToFunctions } from './compiler/index'
 import { shouldDecodeNewlines, shouldDecodeNewlinesForHref } from './util/compat'
 
 const idToTemplate = cached(id => {

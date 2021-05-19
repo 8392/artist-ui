@@ -7,7 +7,7 @@ import {
   isUndef,
   hyphenate,
   formatComponentName
-} from '@/vue/src/core/util/index'
+} from 'core/util/index'
 
 export function extractPropsFromVNodeData (
   data: VNodeData,
@@ -43,7 +43,7 @@ export function extractPropsFromVNodeData (
         }
       }
       checkProp(res, props, key, altKey, true) ||
-        checkProp(res, attrs, key, altKey, false)
+      checkProp(res, attrs, key, altKey, false)
     }
   }
   return res

@@ -1,9 +1,9 @@
 /* @flow */
 
-import { parse } from '@/vue/src/compiler/parser/index'
+import { parse } from 'compiler/parser/index'
 import { generate } from './codegen'
 import { optimize } from './optimizer'
-import { createCompilerCreator } from '@/vue/src/compiler/create-compiler'
+import { createCompilerCreator } from 'compiler/create-compiler'
 
 export const createCompiler = createCompilerCreator(function baseCompile (
   template: string,

@@ -1,8 +1,8 @@
 /* @flow */
 
-import Vue from '@/vue/src/core/index'
+import Vue from 'core/index'
 import { patch } from 'weex/runtime/patch'
-import { mountComponent } from '@/vue/src/core/instance/lifecycle'
+import { mountComponent } from 'core/instance/lifecycle'
 import platformDirectives from 'weex/runtime/directives/index'
 import platformComponents from 'weex/runtime/components/index'
 

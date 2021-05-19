@@ -1,12 +1,12 @@
 /* @flow */
 
-import { cached, camelize, isPlainObject } from '@/vue/src/shared/util'
-import { parseText } from '@/vue/src/compiler/parser/text-parser'
+import { cached, camelize, isPlainObject } from 'shared/util'
+import { parseText } from 'compiler/parser/text-parser'
 import {
   getAndRemoveAttr,
   getBindingAttr,
   baseWarn
-} from '@/vue/src/compiler/helpers'
+} from 'compiler/helpers'
 
 type StaticStyleResult = {
   dynamic: boolean,

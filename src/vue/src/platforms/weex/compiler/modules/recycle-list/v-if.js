@@ -1,7 +1,7 @@
 /* @flow */
 
-import { addIfCondition } from '@/vue/src/compiler/parser/index'
-import { getAndRemoveAttr, addRawAttr } from '@/vue/src/compiler/helpers'
+import { addIfCondition } from 'compiler/parser/index'
+import { getAndRemoveAttr, addRawAttr } from 'compiler/helpers'
 
 function hasConditionDirective (el: ASTElement): boolean {
   for (const attr in el.attrsMap) {

@@ -1,11 +1,11 @@
 /* @flow */
 
-import { parseText } from '@/vue/src/compiler/parser/text-parser'
+import { parseText } from 'compiler/parser/text-parser'
 import {
   getAndRemoveAttr,
   getBindingAttr,
   baseWarn
-} from '@/vue/src/compiler/helpers'
+} from 'compiler/helpers'
 
 type StaticClassResult = {
   dynamic: boolean,

@@ -9,7 +9,7 @@ import {
 
 import modules from './modules/index'
 import directives from './directives/index'
-import { genStaticKeys } from '@/vue/src/shared/util'
+import { genStaticKeys } from 'shared/util'
 import { isUnaryTag, canBeLeftOpenTag } from './util'
 
 export const baseOptions: CompilerOptions = {

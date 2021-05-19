@@ -1,6 +1,6 @@
 /* @flow */
 
-import { addAttr } from '@/vue/src/compiler/helpers'
+import { addAttr } from 'compiler/helpers'
 
 function genText (node: ASTNode) {
   const value = node.type === 3

@@ -1,8 +1,8 @@
 /* @flow */
 
-import VNode from '@/vue/src/core/vdom/vnode'
+import VNode from 'core/vdom/vnode'
 import { renderAttr } from './attrs'
-import { isDef, isUndef, extend } from '@/vue/src/shared/util'
+import { isDef, isUndef, extend } from 'shared/util'
 import { propsToAttrMap, isRenderableAttr } from '../util'
 
 export default function renderDOMProps (node: VNodeWithData): string {

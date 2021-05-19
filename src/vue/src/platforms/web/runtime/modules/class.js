@@ -3,13 +3,13 @@
 import {
   isDef,
   isUndef
-} from '@/vue/src/shared/util'
+} from 'shared/util'
 
 import {
   concat,
   stringifyClass,
   genClassForVnode
-} from '@/vue/src/platforms/web/util/index'
+} from 'web/util/index'
 
 function updateClass (oldVnode: any, vnode: any) {
   const el = vnode.elm

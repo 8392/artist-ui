@@ -1,6 +1,6 @@
 /* @flow */
 
-import { namespaceMap } from '@/vue/src/platforms/web/util/index'
+import { namespaceMap } from 'web/util/index'
 
 export function createElement (tagName: string, vnode: VNode): Element {
   const elm = document.createElement(tagName)

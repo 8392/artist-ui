@@ -9,7 +9,7 @@ import { nativeWatch, hasSymbol } from './env'
 import {
   ASSET_TYPES,
   LIFECYCLE_HOOKS
-} from '@/vue/src/shared/constants'
+} from 'shared/constants'
 
 import {
   extend,
@@ -19,7 +19,7 @@ import {
   capitalize,
   isBuiltInTag,
   isPlainObject
-} from '@/vue/src/shared/util'
+} from 'shared/util'
 
 /**
  * Option overwriting strategies are functions that handle
@@ -239,23 +239,23 @@ strats.watch = function (
  * Other object hashes.
  */
 strats.props =
-  strats.methods =
-  strats.inject =
-  strats.computed = function (
-    parentVal: ?Object,
-    childVal: ?Object,
-    vm?: Component,
-    key: string
-  ): ?Object {
-    if (childVal && process.env.NODE_ENV !== 'production') {
-      assertObjectType(key, childVal, vm)
-    }
-    if (!parentVal) return childVal
-    const ret = Object.create(null)
-    extend(ret, parentVal)
-    if (childVal) extend(ret, childVal)
-    return ret
+strats.methods =
+strats.inject =
+strats.computed = function (
+  parentVal: ?Object,
+  childVal: ?Object,
+  vm?: Component,
+  key: string
+): ?Object {
+  if (childVal && process.env.NODE_ENV !== 'production') {
+    assertObjectType(key, childVal, vm)
   }
+  if (!parentVal) return childVal
+  const ret = Object.create(null)
+  extend(ret, parentVal)
+  if (childVal) extend(ret, childVal)
+  return ret
+}
 strats.provide = mergeDataOrFn
 
 /**

@@ -1,4 +1,4 @@
-import { isPlainObject } from '@/vue/src/shared/util'
+import { isPlainObject } from 'shared/util'
 
 const vm = require('vm')
 const path = require('path')
@@ -49,7 +49,7 @@ function compileModule (files, basedir, runInNewContext) {
     const compiledWrapper = runInNewContext === false
       ? script.runInThisContext()
       : script.runInNewContext(sandbox)
-    const m = { exports: {} }
+    const m = { exports: {}}
     const r = file => {
       file = path.posix.join('.', file)
       if (files[file]) {

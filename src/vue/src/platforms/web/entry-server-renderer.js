@@ -2,7 +2,7 @@
 
 process.env.VUE_ENV = 'server'
 
-import { extend } from '@/vue/src/shared/util'
+import { extend } from 'shared/util'
 import modules from './server/modules/index'
 import baseDirectives from './server/directives/index'
 import { isUnaryTag, canBeLeftOpenTag } from './compiler/util'

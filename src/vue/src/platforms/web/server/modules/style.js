@@ -1,8 +1,8 @@
 /* @flow */
 
 import { escape, noUnitNumericStyleProps } from '../util'
-import { hyphenate } from '@/vue/src/shared/util'
-import { getStyle } from '@/vue/src/platforms/web/util/style'
+import { hyphenate } from 'shared/util'
+import { getStyle } from 'web/util/style'
 
 export function genStyle (style: Object): string {
   let styleText = ''
@@ -20,7 +20,7 @@ export function genStyle (style: Object): string {
   return styleText
 }
 
-function normalizeValue (key: string, value: any): string {
+function normalizeValue(key: string, value: any): string {
   if (
     typeof value === 'string' ||
     (typeof value === 'number' && noUnitNumericStyleProps[key]) ||

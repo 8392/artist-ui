@@ -1,8 +1,8 @@
 /* @flow */
 
 import VNode from './vnode'
-import { resolveConstructorOptions } from '@/vue/src/core/instance/init'
-import { queueActivatedComponent } from '@/vue/src/core/observer/scheduler'
+import { resolveConstructorOptions } from 'core/instance/init'
+import { queueActivatedComponent } from 'core/observer/scheduler'
 import { createFunctionalComponent } from './create-functional-component'
 
 import {
@@ -30,7 +30,7 @@ import {
 import {
   isRecyclableComponent,
   renderRecyclableComponentTemplate
-} from '@/vue/src/platforms/weex/runtime/recycle-list/render-component-template'
+} from 'weex/runtime/recycle-list/render-component-template'
 
 // inline hooks to be invoked on component VNodes during patch
 const componentVNodeHooks = {
@@ -250,7 +250,7 @@ function mergeHook (f1: any, f2: any): Function {
 function transformModel (options, data: any) {
   const prop = (options.model && options.model.prop) || 'value'
   const event = (options.model && options.model.event) || 'input'
-    ; (data.attrs || (data.attrs = {}))[prop] = data.model.value
+  ;(data.attrs || (data.attrs = {}))[prop] = data.model.value
   const on = data.on || (data.on = {})
   const existing = on[event]
   const callback = data.model.callback

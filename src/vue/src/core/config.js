@@ -4,9 +4,9 @@ import {
   no,
   noop,
   identity
-} from '@/vue/src/shared/util'
+} from 'shared/util'
 
-import { LIFECYCLE_HOOKS } from '@/vue/src/shared/constants'
+import { LIFECYCLE_HOOKS } from 'shared/constants'
 
 export type Config = {
   // user
@@ -37,7 +37,7 @@ export type Config = {
 
 export default ({
   /**
-   * Option merge strategies (used in @/vue/src/core/util/options)
+   * Option merge strategies (used in core/util/options)
    */
   // $flow-disable-line
   optionMergeStrategies: Object.create(null),

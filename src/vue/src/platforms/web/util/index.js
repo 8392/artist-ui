@@ -1,6 +1,6 @@
 /* @flow */
 
-import { warn } from '@/vue/src/core/util/index'
+import { warn } from 'core/util/index'
 
 export * from './attrs'
 export * from './class'

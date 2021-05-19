@@ -1,6 +1,6 @@
 /* @flow */
 
-import { addProp } from '@/vue/src/compiler/helpers'
+import { addProp } from 'compiler/helpers'
 
 export default function html (el: ASTElement, dir: ASTDirective) {
   if (dir.value) {

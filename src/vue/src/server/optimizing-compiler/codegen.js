@@ -12,7 +12,7 @@ import {
   genElement,
   genChildren,
   CodegenState
-} from '@/vue/src/compiler/codegen/index'
+} from 'compiler/codegen/index'
 
 import {
   genAttrSegments,
@@ -22,9 +22,9 @@ import {
   applyModelTransform
 } from './modules'
 
-import { escape } from '@/vue/src/platforms/web/server/util'
+import { escape } from 'web/server/util'
 import { optimizability } from './optimizer'
-import type { CodegenResult } from '@/vue/src/compiler/codegen/index'
+import type { CodegenResult } from 'compiler/codegen/index'
 
 export type StringSegment = {
   type: number;
@@ -85,9 +85,9 @@ function genNormalElement (el, state, stringifyChildren) {
     : genSSRChildren(el, state, true)
   return `_c('${el.tag}'${
     data ? `,${data}` : ''
-    }${
+  }${
     children ? `,${children}` : ''
-    })`
+  })`
 }
 
 function genSSRChildren (el, state, checkSkip) {
@@ -114,9 +114,9 @@ function genStringElementWithChildren (el, state) {
   const children = genSSRChildren(el, state, true)
   return `_ssrNode(${
     flattenSegments(elementToOpenTagSegments(el, state))
-    },"</${el.tag}>"${
+  },"</${el.tag}>"${
     children ? `,${children}` : ''
-    })`
+  })`
 }
 
 function elementToString (el, state) {

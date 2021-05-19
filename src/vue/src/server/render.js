@@ -1,19 +1,19 @@
 /* @flow */
 
-import { escape } from '@/vue/src/platforms/web/server/util'
-import { SSR_ATTR } from '@/vue/src/shared/constants'
+import { escape } from 'web/server/util'
+import { SSR_ATTR } from 'shared/constants'
 import { RenderContext } from './render-context'
-import { resolveAsset } from '@/vue/src/core/util/options'
-import { generateComponentTrace } from '@/vue/src/core/util/debug'
-import { ssrCompileToFunctions } from '@/vue/src/platforms/web/server/compiler'
-import { installSSRHelpers } from './optimizing-@/vue/src/compiler/runtime-helpers'
+import { resolveAsset } from 'core/util/options'
+import { generateComponentTrace } from 'core/util/debug'
+import { ssrCompileToFunctions } from 'web/server/compiler'
+import { installSSRHelpers } from './optimizing-compiler/runtime-helpers'
 
-import { isDef, isUndef, isTrue } from '@/vue/src/shared/util'
+import { isDef, isUndef, isTrue } from 'shared/util'
 
 import {
   createComponent,
   createComponentInstanceForVnode
-} from '@/vue/src/core/vdom/create-component'
+} from 'core/vdom/create-component'
 
 let warned = Object.create(null)
 const warnOnce = msg => {
@@ -43,7 +43,7 @@ const normalizeRender = vm => {
     } else {
       throw new Error(
         `render function or template not defined in component: ${
-        vm.$options.name || vm.$options._componentTag || 'anonymous'
+          vm.$options.name || vm.$options._componentTag || 'anonymous'
         }`
       )
     }
@@ -152,7 +152,7 @@ function renderComponent (node, isRoot, context) {
     if (isDef(getKey) && isUndef(cache)) {
       warnOnce(
         `[vue-server-renderer] Component ${
-        Ctor.options.name || '(anonymous)'
+          Ctor.options.name || '(anonymous)'
         } implemented serverCacheKey, ` +
         'but no cache was provided to the renderer.'
       )
@@ -407,7 +407,7 @@ function renderStartingTag (node: VNode, context) {
 }
 
 export function createRenderFunction (
-  modules: Array<(node: VNode) =>?string>,
+  modules: Array<(node: VNode) => ?string>,
   directives: Object,
   isUnaryTag: Function,
   cache: any

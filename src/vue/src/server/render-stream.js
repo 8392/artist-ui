@@ -10,7 +10,7 @@
 
 const stream = require('stream')
 
-import { isTrue, isUndef } from '@/vue/src/shared/util'
+import { isTrue, isUndef } from 'shared/util'
 import { createWriteFunction } from './write'
 
 export default class RenderStream extends stream.Readable {
@@ -22,7 +22,7 @@ export default class RenderStream extends stream.Readable {
   end: Function;
   done: boolean;
 
-  constructor(render: Function) {
+  constructor (render: Function) {
     super()
     this.buffer = ''
     this.render = render

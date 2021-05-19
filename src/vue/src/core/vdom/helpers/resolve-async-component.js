@@ -10,10 +10,10 @@ import {
   hasSymbol,
   isPromise,
   remove
-} from '@/vue/src/core/util/index'
+} from 'core/util/index'
 
-import { createEmptyVNode } from '@/vue/src/core/vdom/vnode'
-import { currentRenderingInstance } from '@/vue/src/core/instance/render'
+import { createEmptyVNode } from 'core/vdom/vnode'
+import { currentRenderingInstance } from 'core/instance/render'
 
 function ensureCtor (comp: any, base) {
   if (
@@ -68,7 +68,7 @@ export function resolveAsyncComponent (
     let timerLoading = null
     let timerTimeout = null
 
-      ; (owner: any).$on('hook:destroyed', () => remove(owners, owner))
+    ;(owner: any).$on('hook:destroyed', () => remove(owners, owner))
 
     const forceRender = (renderCompleted: boolean) => {
       for (let i = 0, l = owners.length; i < l; i++) {

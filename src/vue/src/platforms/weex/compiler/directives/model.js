@@ -1,7 +1,7 @@
 /* @flow */
 
-import { addHandler, addAttr } from '@/vue/src/compiler/helpers'
-import { genComponentModel, genAssignmentCode } from '@/vue/src/compiler/directives/model'
+import { addHandler, addAttr } from 'compiler/helpers'
+import { genComponentModel, genAssignmentCode } from 'compiler/directives/model'
 
 export default function model (
   el: ASTElement,

@@ -1,12 +1,12 @@
 /* @flow */
 
-import { isIE, isIE9, isEdge } from '@/vue/src/core/util/env'
+import { isIE, isIE9, isEdge } from 'core/util/env'
 
 import {
   extend,
   isDef,
   isUndef
-} from '@/vue/src/shared/util'
+} from 'shared/util'
 
 import {
   isXlink,
@@ -16,7 +16,7 @@ import {
   isEnumeratedAttr,
   isFalsyAttrValue,
   convertEnumeratedValue
-} from '@/vue/src/platforms/web/util/index'
+} from 'web/util/index'
 
 function updateAttrs (oldVnode: VNodeWithData, vnode: VNodeWithData) {
   const opts = vnode.componentOptions

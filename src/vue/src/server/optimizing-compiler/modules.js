@@ -9,15 +9,15 @@ import {
 import {
   propsToAttrMap,
   isRenderableAttr
-} from '@/vue/src/platforms/web/server/util'
+} from 'web/server/util'
 
 import {
   isBooleanAttr,
   isEnumeratedAttr
-} from '@/vue/src/platforms/web/util/attrs'
+} from 'web/util/attrs'
 
 import type { StringSegment } from './codegen'
-import type { CodegenState } from '@/vue/src/compiler/codegen/index'
+import type { CodegenState } from 'compiler/codegen/index'
 
 const plainStringRE = /^"(?:[^"\\]|\\.)*"$|^'(?:[^'\\]|\\.)*'$/
 
@@ -112,13 +112,13 @@ export function genStyleSegments (
       type: EXPRESSION,
       value: `_ssrStyle(${
         parsedStaticStyle || 'null'
-        },${
+      },${
         styleBinding || 'null'
-        }, ${
+      }, ${
         vShowExpression
           ? `{ display: (${vShowExpression}) ? '' : 'none' }`
           : 'null'
-        })`
+      })`
     }]
   }
 }

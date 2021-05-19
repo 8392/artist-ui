@@ -1,7 +1,7 @@
 /* @flow */
 
 import { escape } from '../util'
-import { genClassForVnode } from '@/vue/src/platforms/'
+import { genClassForVnode } from 'web/util/index'
 
 export default function renderClass (node: VNodeWithData): ?string {
   const classList = genClassForVnode(node)

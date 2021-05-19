@@ -2,15 +2,15 @@
 
 // https://github.com/Hanks10100/weex-native-directive/tree/master/component
 
-import { mergeOptions, isPlainObject, noop } from '@/vue/src/core/util/index'
-import Watcher from '@/vue/src/core/observer/watcher'
-import { initProxy } from '@/vue/src/core/instance/proxy'
-import { initState, getData } from '@/vue/src/core/instance/state'
-import { initRender } from '@/vue/src/core/instance/render'
-import { initEvents } from '@/vue/src/core/instance/events'
-import { initProvide, initInjections } from '@/vue/src/core/instance/inject'
-import { initLifecycle, callHook } from '@/vue/src/core/instance/lifecycle'
-import { initInternalComponent, resolveConstructorOptions } from '@/vue/src/core/instance/init'
+import { mergeOptions, isPlainObject, noop } from 'core/util/index'
+import Watcher from 'core/observer/watcher'
+import { initProxy } from 'core/instance/proxy'
+import { initState, getData } from 'core/instance/state'
+import { initRender } from 'core/instance/render'
+import { initEvents } from 'core/instance/events'
+import { initProvide, initInjections } from 'core/instance/inject'
+import { initLifecycle, callHook } from 'core/instance/lifecycle'
+import { initInternalComponent, resolveConstructorOptions } from 'core/instance/init'
 import { registerComponentHook, updateComponentData } from '../../util/index'
 
 let uid = 0

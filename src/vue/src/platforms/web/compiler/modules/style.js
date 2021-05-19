@@ -1,12 +1,12 @@
 /* @flow */
 
-import { parseText } from '@/vue/src/compiler/parser/text-parser'
-import { parseStyleText } from '@/vue/src/platforms/web/util/style'
+import { parseText } from 'compiler/parser/text-parser'
+import { parseStyleText } from 'web/util/style'
 import {
   getAndRemoveAttr,
   getBindingAttr,
   baseWarn
-} from '@/vue/src/compiler/helpers'
+} from 'compiler/helpers'
 
 function transformNode (el: ASTElement, options: CompilerOptions) {
   const warn = options.warn || baseWarn
