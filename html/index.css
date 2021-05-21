@@ -1,0 +1,18 @@
+.main {
+  background-color: transparent;
+}
+
+.main::before, .main::after {
+  background-color: #f00;
+}
+
+.main::before {
+  -webkit-transform: translateY(6px) rotate(45deg);
+          transform: translateY(6px) rotate(45deg);
+}
+
+.main::after {
+  -webkit-transform: translateY(-6px) rotate(-45deg);
+          transform: translateY(-6px) rotate(-45deg);
+}
+/*# sourceMappingURL=index.css.map */

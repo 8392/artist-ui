@@ -23,7 +23,8 @@ export function isFalse (v: any): boolean {
 /**
  * Check if value is primitive.
  */
-export function isPrimitive (value: any): boolean {
+//  Primitive 原始的
+export function isPrimitive (value: any): boolean {  //原始类型
   return (
     typeof value === 'string' ||
     typeof value === 'number' ||

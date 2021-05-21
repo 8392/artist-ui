@@ -1,0 +1,22 @@
+$burger-gutter: 3px;
+$burger-height: 3px;
+@mixin burger-to-cross($color: auto) {
+    & {
+        background-color: transparent;
+    }
+    @if ($color != auto) {
+        &::before, &::after {
+            background-color: $color;
+        }
+    }
+    &::before {
+        transform: translateY($burger-gutter + $burger-height) rotate(45deg);
+    }
+    &::after {
+        transform: translateY(-($burger-gutter + $burger-height)) rotate(-45deg);
+    }
+}
+
+.main {
+    @include burger-to-cross(#f00)
+}

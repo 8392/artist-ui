@@ -31,7 +31,7 @@ export function initRender (vm: Component) {
   vm._c = (a, b, c, d) => createElement(vm, a, b, c, d, false)
   // normalization is always applied for the public version, used in
   // user-written render functions.
-  vm.$createElement = (a, b, c, d) => createElement(vm, a, b, c, d, true)
+  vm.$createElement = (a, b, c, d) => createElement(vm, a, b, c, d, true)  //手写render函数执行的方法
 
   // $attrs & $listeners are exposed for easier HOC creation.
   // they need to be reactive so that HOCs using them are always updated

@@ -8,7 +8,8 @@ function broadcast (componentName, eventName, params) {
     // 找到组件名为componentName的子组件，并调用该子组件的$emit方法；
     // 否则，继续递归
     if (name === componentName) {
-      child.$emit.apply(child, [eventName].concat(params));
+      // child.$emit.apply(child, [eventName].concat(params));
+      child.$emit.call(child, eventName, params)
     } else {
       broadcast.apply(child, [componentName, eventName].concat([params]));
     }

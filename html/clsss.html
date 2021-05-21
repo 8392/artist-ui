@@ -14,11 +14,28 @@
             height: 100px;
             border: 1px solid #ddd;
         }
+        .main {
+  background-color: transparent;
+}
+
+.main::before, .main::after {
+  background-color: #f00;
+}
+
+.main::before {
+  -webkit-transform: translateY(6px) rotate(45deg);
+          transform: translateY(6px) rotate(45deg);
+}
+
+.main::after {
+  -webkit-transform: translateY(-6px) rotate(-45deg);
+          transform: translateY(-6px) rotate(-45deg);
+}
     </style>
 </head>
 <body>
     <div>
-        <div id="nav" class="active1">测试001</div>
+        <div id="nav" class="active1 main">测试001</div>
     </div>
     <script>    
         const nav = document.querySelector('#nav')

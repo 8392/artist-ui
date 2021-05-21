@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 定义一个主题 */
+        class Object {
+            constructor() {
+                this.observers = []
+            }
+            getState() {
+                return this.state
+            }
+            setState(state) {
+                this.state = state
+                this.triggerAllOber()
+            }
+            attach(state) {
+                this.observers.push(state)
+            }
+            triggerAllOber() { //触发所以观察者
+                this.observers.map(observer => {
+                    observer.update()
+                })
+            }
+        }
+
+        class Observer {
+            constructor(name, subject) {
+                this.name = name
+                this.subject = subject
+                this.subject.attach(this)
+            }
+            update () {
+                console.log(`观察者名字${this.name}`)
+            }
+        }
+
+        const o = new Object()
+        const b1 = new Observer('b1', o)
+        const b2 = new Observer('b2', o)
+        o.setState('b1')
+        // o.setState('b2')
+    </script>
+</body>
+</html>
