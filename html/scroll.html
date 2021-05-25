@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Popper Tutorial</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+        .main{
+            /* padding-top:  500px; */
+            height: 1600px;
+            background: #ccc;
+        }
+        #button{
+            position: absolute;
+            top: 500px;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="main"></div>
+
+
+    <script>
+        const Dom = {
+          /**
+           * 获取滚动条距顶部的距离
+           */
+          getScrollTop: function () {
+              return (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+          },
+          /**
+           * 获取一个元素的距离文档(document)的位置，类似jQ中的offset()
+           * @param {HTMLElement} ele
+           * return { {left: number, top: number} }
+           */
+          offset: function (ele) {
+              var pos = {
+                  left: 0,
+                  top: 0
+              };
+              while (ele) {
+                  pos.left += ele.offsetLeft;
+                  pos.top += ele.offsetTop;
+                  ele = ele.offsetParent;
+              };
+              return pos;
+          },
+          setScrollTop: function (value) {
+              window.scrollTo(0, value);
+              return value;
+          },
+          requestAnimFrame: (function () {
+              return window.requestAnimationFrame ||
+                  window.webkitRequestAnimationFrame ||
+                  window.mozRequestAnimationFrame ||
+                  function (callback) {
+                      window.setTimeout(callback, 1000 / 60);
+                  };
+          })(),
+          /**
+           * 在${duration}时间内，滚动条平滑滚动到${to}指定位置
+           * param {Number} to
+           * param {Number} duration
+           */
+          scrollTo: function (to, duration) {
+              var that = this;
+              if (duration < 0) {
+                  this.setScrollTop(to);
+                  return
+              }
+              var diff = to - this.getScrollTop();  //距离差 300 / 1000
+              if (diff === 0) return
+              var step = diff / duration * 10;  //步长
+
+              requestAnimationFrame(
+                function () {
+                    if (Math.abs(step) > Math.abs(diff)) { //获取绝对值
+                        that.setScrollTop(that.getScrollTop() + diff);
+                        return;
+                    }
+                    that.setScrollTop(that.getScrollTop() + step);
+                    if (diff > 0 && that.getScrollTop() >= to || diff < 0 && that.getScrollTop() <= to) {
+                        return;
+                    }
+                    that.scrollTo(to, duration - 16);
+                });
+          }
+
+      }
+      window.Dom = Dom
+      // Dom.scrollTo(100, 1)
+
+  function formatPassTime(startTime) {
+      var currentTime = Date.parse(new Date()),
+        time = currentTime - startTime,
+        day = parseInt(time / (1000 * 60 * 60 * 24)),
+        hour = parseInt(time / (1000 * 60 * 60)),
+        min = parseInt(time / (1000 * 60)),
+        month = parseInt(day / 30),
+        year = parseInt(month / 12)
+      if (year) return year + '年前'
+      if (month) return month + '个月前'
+      if (day) return day + '天前'
+      if (hour) return hour + '小时前'
+      if (min) return min + '分钟前'
+      else return '刚刚'
+  }
+    </script>
+  </body>
+</html>
