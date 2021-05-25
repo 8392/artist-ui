@@ -4,6 +4,8 @@
     <el-button type="primary" plain @click="dialogVisible = true">主要按钮</el-button>
     <el-button type="primary" plain v-repeat-click="moreClickTest">测试多次点击</el-button>
     <!-- <div :key='x' v-for="x in 60">阿达开始的黄金卡时间看到</div> -->
+    <!-- <el-input v-model="input" placeholder="请输入内容" @keyup.native="handleKeyup"></el-input> -->
+    <InputTest @keyup="handleKeyup" />
     <el-dialog
       title="提示"
       :visible.sync="dialogVisible"
@@ -56,10 +58,10 @@
 <script>
 
 import RepeatClick from '@/element-ui/src/directives/repeat-click'
-
+import InputTest from './inputTest'
 export default {
   name: 'Home',
-  components: {},
+  components: {InputTest},
   directives: {
     repeatClick: RepeatClick
   },
@@ -67,6 +69,7 @@ export default {
     return {
       innerShow: false,
       dialogVisible: false,
+      input: '',
       options: [{
         value: '选项1',
         label: '黄金糕'
@@ -87,6 +90,9 @@ export default {
     // }
     moreClickTest () {
       console.log('测试')
+    },
+    handleKeyup () {
+      console.log('handleKeyup')
     }
 
   }

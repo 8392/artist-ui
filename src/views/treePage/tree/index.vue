@@ -4,21 +4,21 @@
       <div class="tree-title-label" @click="handleFirst(item, index)">
           {{item.label}}
       </div>
-      <el-collapse-transition>
+      <!-- <el-collapse-transition>
         <Item class="tree-item" v-show="item.expaned" :data.sync='item.children'  />
-      </el-collapse-transition>
+      </el-collapse-transition> -->
     </div>
   </div>
 </template>
 
 <script>
-import ElCollapseTransition from '@/element-ui/src/transitions/collapse-transition'
+// import ElCollapseTransition from '@/element-ui/src/transitions/collapse-transition'
 
 import Item from './item'
 export default {
   components: {
     Item,
-    ElCollapseTransition
+    // ElCollapseTransition
   },
   props: {
     data: {
