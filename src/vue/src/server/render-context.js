@@ -1,6 +1,6 @@
 /* @flow */
 
-import { isUndef } from '@/vue/src/shared/util'
+import { isUndef } from 'shared/util'
 
 type RenderState = {
   type: 'Element';
@@ -33,7 +33,7 @@ export class RenderContext {
   next: () => void;
   done: (err: ?Error) => void;
 
-  modules: Array<(node: VNode) =>?string>;
+  modules: Array<(node: VNode) => ?string>;
   directives: Object;
   isUnaryTag: (tag: string) => boolean;
 
@@ -41,7 +41,7 @@ export class RenderContext {
   get: ?(key: string, cb: Function) => void;
   has: ?(key: string, cb: Function) => void;
 
-  constructor(options: Object) {
+  constructor (options: Object) {
     this.userContext = options.userContext
     this.activeInstance = options.activeInstance
     this.renderStates = []

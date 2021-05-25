@@ -1,7 +1,7 @@
 /* @flow */
 
-import { baseOptions } from '@/vue/src/compiler/options'
-import { createCompiler } from 'server/optimizing-@/vue/src/compiler/index'
+import { baseOptions } from '../compiler/options'
+import { createCompiler } from 'server/optimizing-compiler/index'
 
 const { compile, compileToFunctions } = createCompiler(baseOptions)
 

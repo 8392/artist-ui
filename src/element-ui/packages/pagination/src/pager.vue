@@ -35,11 +35,11 @@
     name: 'ElPager',
 
     props: {
-      currentPage: Number,
+      currentPage: Number, //当前页
 
-      pageCount: Number,
+      pageCount: Number, //页数
 
-      pagerCount: Number,
+      pagerCount: Number,  //显示多少个按钮
 
       disabled: Boolean
     },
@@ -60,8 +60,7 @@
         if (target.tagName === 'UL' || this.disabled) {
           return;
         }
-
-        let newPage = Number(event.target.textContent);
+        let newPage = Number(event.target.textContent); //点击的页码
         const pageCount = this.pageCount;
         const currentPage = this.currentPage;
         const pagerCountOffset = this.pagerCount - 2;
@@ -84,6 +83,7 @@
             newPage = pageCount;
           }
         }
+
 
         if (newPage !== currentPage) {
           this.$emit('change', newPage);

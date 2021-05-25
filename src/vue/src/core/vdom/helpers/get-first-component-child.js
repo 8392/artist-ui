@@ -1,6 +1,6 @@
 /* @flow */
 
-import { isDef } from '@/vue/src/shared/util'
+import { isDef } from 'shared/util'
 import { isAsyncPlaceholder } from './is-async-placeholder'
 
 export function getFirstComponentChild (children: ?Array<VNode>): ?VNode {

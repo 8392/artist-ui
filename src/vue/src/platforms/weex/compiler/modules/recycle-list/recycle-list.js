@@ -1,7 +1,7 @@
 /* @flow */
 
-import { parseFor } from '@/vue/src/compiler/parser/index'
-import { getAndRemoveAttr, addRawAttr } from '@/vue/src/compiler/helpers'
+import { parseFor } from 'compiler/parser/index'
+import { getAndRemoveAttr, addRawAttr } from 'compiler/helpers'
 
 /**
  * Map the following syntax to corresponding attrs:

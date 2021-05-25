@@ -1,6 +1,6 @@
 /* @flow */
 
-import { emptyObject } from '@/vue/src/shared/util'
+import { emptyObject } from 'shared/util'
 import { parseFilters } from './parser/filter-parser'
 
 type Range = { start?: number, end?: number };

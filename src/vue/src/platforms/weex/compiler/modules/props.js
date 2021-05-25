@@ -1,6 +1,6 @@
 /* @flow */
 
-import { cached, camelize } from '@/vue/src/shared/util'
+import { cached, camelize } from 'shared/util'
 
 const normalize = cached(camelize)
 

@@ -9,9 +9,9 @@
  * http://erik.eae.net/simplehtmlparser/simplehtmlparser.js
  */
 
-import { makeMap, no } from '@/vue/src/shared/util'
-import { isNonPhrasingTag } from '@/vue/src/platforms/web/compiler/util'
-import { unicodeRegExp } from '@/vue/src/core/util/lang'
+import { makeMap, no } from 'shared/util'
+import { isNonPhrasingTag } from 'web/compiler/util'
+import { unicodeRegExp } from 'core/util/lang'
 
 // Regular Expressions for parsing tags and attributes
 const attribute = /^\s*([^\s"'<>\/=]+)(?:\s*(=)\s*(?:"([^"]*)"+|'([^']*)'+|([^\s"'=<>`]+)))?/

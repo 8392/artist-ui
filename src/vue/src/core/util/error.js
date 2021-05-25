@@ -3,7 +3,7 @@
 import config from '../config'
 import { warn } from './debug'
 import { inBrowser, inWeex } from './env'
-import { isPromise } from '@/vue/src/shared/util'
+import { isPromise } from 'shared/util'
 import { pushTarget, popTarget } from '../observer/dep'
 
 export function handleError (err: Error, vm: any, info: string) {

@@ -3,10 +3,10 @@
  * properties to Elements.
  */
 
-import { isTextInputType } from '@/vue/src/platforms/web/util/element'
-import { looseEqual, looseIndexOf } from '@/vue/src/shared/util'
-import { mergeVNodeHook } from '@/vue/src/core/vdom/helpers/index'
-import { warn, isIE9, isIE, isEdge } from '@/vue/src/core/util/index'
+import { isTextInputType } from 'web/util/element'
+import { looseEqual, looseIndexOf } from 'shared/util'
+import { mergeVNodeHook } from 'core/vdom/helpers/index'
+import { warn, isIE9, isIE, isEdge } from 'core/util/index'
 
 /* istanbul ignore if */
 if (isIE9) {
@@ -89,7 +89,7 @@ function actuallySetSelected (el, binding, vm) {
     process.env.NODE_ENV !== 'production' && warn(
       `<select multiple v-model="${binding.expression}"> ` +
       `expects an Array value for its binding, but got ${
-      Object.prototype.toString.call(value).slice(8, -1)
+        Object.prototype.toString.call(value).slice(8, -1)
       }`,
       vm
     )

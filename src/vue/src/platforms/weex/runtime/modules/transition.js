@@ -1,7 +1,7 @@
-import { warn } from '@/vue/src/core/util/debug'
-import { extend, once, noop } from '@/vue/src/shared/util'
-import { activeInstance } from '@/vue/src/core/instance/lifecycle'
-import { resolveTransition } from '@/vue/src/platforms/web/runtime/transition-util'
+import { warn } from 'core/util/debug'
+import { extend, once, noop } from 'shared/util'
+import { activeInstance } from 'core/instance/lifecycle'
+import { resolveTransition } from 'web/runtime/transition-util'
 
 export default {
   create: enter,

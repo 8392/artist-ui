@@ -9,7 +9,7 @@ import {
   hyphenate,
   capitalize,
   isPlainObject
-} from '@/vue/src/shared/util'
+} from 'shared/util'
 
 type PropOptions = {
   type: Function | Array<Function> | null,
@@ -209,8 +209,8 @@ function getInvalidTypeMessage (name, value, expectedTypes) {
   const receivedValue = styleValue(value, receivedType)
   // check if we need to specify expected value
   if (expectedTypes.length === 1 &&
-    isExplicable(expectedType) &&
-    !isBoolean(expectedType, receivedType)) {
+      isExplicable(expectedType) &&
+      !isBoolean(expectedType, receivedType)) {
     message += ` with value ${expectedValue}`
   }
   message += `, got ${receivedType} `

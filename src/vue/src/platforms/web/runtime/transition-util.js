@@ -1,8 +1,8 @@
 /* @flow */
 
-import { inBrowser, isIE9 } from '@/vue/src/core/util/index'
+import { inBrowser, isIE9 } from 'core/util/index'
 import { addClass, removeClass } from './class-util'
-import { remove, extend, cached } from '@/vue/src/shared/util'
+import { remove, extend, cached } from 'shared/util'
 
 export function resolveTransition (def?: string | Object): ?Object {
   if (!def) {

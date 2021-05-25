@@ -3,13 +3,13 @@
 import {
   warn,
   invokeWithErrorHandling
-} from '@/vue/src/core/util/index'
+} from 'core/util/index'
 import {
   cached,
   isUndef,
   isTrue,
   isPlainObject
-} from '@/vue/src/shared/util'
+} from 'shared/util'
 
 const normalizeEvent = cached((name: string): {
   name: string,

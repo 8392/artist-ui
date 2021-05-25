@@ -1,7 +1,7 @@
 /* @flow */
 
-import config from '@/vue/src/core/config'
-import { hyphenate } from '@/vue/src/shared/util'
+import config from 'core/config'
+import { hyphenate } from 'shared/util'
 
 function isKeyNotMatch<T> (expect: T | Array<T>, actual: T): boolean {
   if (Array.isArray(expect)) {

@@ -2,8 +2,8 @@
 export {
   transitionProps,
   extractTransitionData
-} from '@/vue/src/platforms/web/runtime/components/transition'
+} from 'web/runtime/components/transition'
 
-import Transition from '@/vue/src/platforms/web/runtime/components/transition'
+import Transition from 'web/runtime/components/transition'
 
 export default Transition

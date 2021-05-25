@@ -1,8 +1,8 @@
 /* @flow */
 
 import deindent from 'de-indent'
-import { parseHTML } from '@/vue/src/compiler/parser/html-parser'
-import { makeMap } from '@/vue/src/shared/util'
+import { parseHTML } from 'compiler/parser/html-parser'
+import { makeMap } from 'shared/util'
 
 const splitRE = /\r?\n/g
 const replaceRE = /./g

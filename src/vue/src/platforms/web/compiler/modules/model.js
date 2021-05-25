@@ -14,14 +14,14 @@ import {
   addRawAttr,
   getBindingAttr,
   getAndRemoveAttr
-} from '@/vue/src/compiler/helpers'
+} from 'compiler/helpers'
 
 import {
   processFor,
   processElement,
   addIfCondition,
   createASTElement
-} from '@/vue/src/compiler/parser/index'
+} from 'compiler/parser/index'
 
 function preTransformNode (el: ASTElement, options: CompilerOptions) {
   if (el.tag === 'input') {

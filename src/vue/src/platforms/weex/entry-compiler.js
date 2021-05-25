@@ -1,2 +1,2 @@
-export { compile } from 'weex/@/vue/src/compiler/index'
-export { generateCodeFrame } from '@/vue/src/compiler/codeframe'
+export { compile } from 'weex/compiler/index'
+export { generateCodeFrame } from 'compiler/codeframe'

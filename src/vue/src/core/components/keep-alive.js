@@ -1,7 +1,7 @@
 /* @flow */
 
-import { isRegExp, remove } from '@/vue/src/shared/util'
-import { getFirstComponentChild } from '@/vue/src/core/vdom/helpers/index'
+import { isRegExp, remove } from 'shared/util'
+import { getFirstComponentChild } from 'core/vdom/helpers/index'
 
 type VNodeCache = { [key: string]: ?VNode };
 

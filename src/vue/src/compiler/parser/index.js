@@ -5,8 +5,8 @@ import { parseHTML } from './html-parser'
 import { parseText } from './text-parser'
 import { parseFilters } from './filter-parser'
 import { genAssignmentCode } from '../directives/model'
-import { extend, cached, no, camelize, hyphenate } from '@/vue/src/shared/util'
-import { isIE, isEdge, isServerRendering } from '@/vue/src/core/util/env'
+import { extend, cached, no, camelize, hyphenate } from 'shared/util'
+import { isIE, isEdge, isServerRendering } from 'core/util/env'
 
 import {
   addProp,
@@ -144,7 +144,7 @@ export function parse (
           // keep it in the children list so that v-else(-if) conditions can
           // find it as the prev node.
           const name = element.slotTarget || '"default"'
-            ; (currentParent.scopedSlots || (currentParent.scopedSlots = {}))[name] = element
+          ;(currentParent.scopedSlots || (currentParent.scopedSlots = {}))[name] = element
         }
         currentParent.children.push(element)
         element.parent = currentParent
@@ -884,8 +884,8 @@ function processAttrs (el) {
       // #6887 firefox doesn't update muted state if set via attribute
       // even immediately after element creation
       if (!el.component &&
-        name === 'muted' &&
-        platformMustUseProp(el.tag, el.attrsMap.type, name)) {
+          name === 'muted' &&
+          platformMustUseProp(el.tag, el.attrsMap.type, name)) {
         addProp(el, name, 'true', list[i])
       }
     }

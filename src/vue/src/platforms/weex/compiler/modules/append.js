@@ -1,6 +1,6 @@
 /* @flow */
 
-import { makeMap } from '@/vue/src/shared/util'
+import { makeMap } from 'shared/util'
 
 // The "unitary tag" means that the tag node and its children
 // must be sent to the native together.

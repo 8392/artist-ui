@@ -1,6 +1,6 @@
 /* @flow */
 
-import { isObject, isDef, hasSymbol } from '@/vue/src/core/util/index'
+import { isObject, isDef, hasSymbol } from 'core/util/index'
 
 /**
  * Runtime helper for rendering v-for lists.

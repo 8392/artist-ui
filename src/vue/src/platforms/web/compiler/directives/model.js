@@ -1,8 +1,8 @@
 /* @flow */
 
-import config from '@/vue/src/core/config'
-import { addHandler, addProp, getBindingAttr } from '@/vue/src/compiler/helpers'
-import { genComponentModel, genAssignmentCode } from '@/vue/src/compiler/directives/model'
+import config from 'core/config'
+import { addHandler, addProp, getBindingAttr } from 'compiler/helpers'
+import { genComponentModel, genAssignmentCode } from 'compiler/directives/model'
 
 let warn
 
@@ -83,13 +83,13 @@ function genCheckboxModel (
   )
   addHandler(el, 'change',
     `var $$a=${value},` +
-    '$$el=$event.target,' +
-    `$$c=$$el.checked?(${trueValueBinding}):(${falseValueBinding});` +
+        '$$el=$event.target,' +
+        `$$c=$$el.checked?(${trueValueBinding}):(${falseValueBinding});` +
     'if(Array.isArray($$a)){' +
-    `var $$v=${number ? '_n(' + valueBinding + ')' : valueBinding},` +
-    '$$i=_i($$a,$$v);' +
-    `if($$el.checked){$$i<0&&(${genAssignmentCode(value, '$$a.concat([$$v])')})}` +
-    `else{$$i>-1&&(${genAssignmentCode(value, '$$a.slice(0,$$i).concat($$a.slice($$i+1))')})}` +
+      `var $$v=${number ? '_n(' + valueBinding + ')' : valueBinding},` +
+          '$$i=_i($$a,$$v);' +
+      `if($$el.checked){$$i<0&&(${genAssignmentCode(value, '$$a.concat([$$v])')})}` +
+      `else{$$i>-1&&(${genAssignmentCode(value, '$$a.slice(0,$$i).concat($$a.slice($$i+1))')})}` +
     `}else{${genAssignmentCode(value, '$$c')}}`,
     null, true
   )

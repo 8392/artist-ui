@@ -4,7 +4,7 @@
 // makeMap() due to potential side effects, so these variables end up
 // bloating the web builds.
 
-import { makeMap, noop } from '@/vue/src/shared/util'
+import { makeMap, noop } from 'shared/util'
 
 export const isReservedTag = makeMap(
   'template,script,style,element,content,slot,link,meta,svg,view,' +

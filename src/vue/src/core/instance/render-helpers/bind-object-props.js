@@ -1,7 +1,6 @@
 /* @flow */
 
-import config from '@/vue/src/core/config'
-
+import config from 'core/config'
 
 import {
   warn,
@@ -10,7 +9,7 @@ import {
   isReservedAttribute,
   camelize,
   hyphenate
-} from '@/vue/src/core/util/index'
+} from 'core/util/index'
 
 /**
  * Runtime helper for merging v-bind="object" into a VNode's data.

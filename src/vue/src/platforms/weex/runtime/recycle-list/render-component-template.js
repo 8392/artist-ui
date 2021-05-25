@@ -1,9 +1,9 @@
 /* @flow */
 
-import { warn } from '@/vue/src/core/util/debug'
-import { handleError } from '@/vue/src/core/util/error'
-import { RECYCLE_LIST_MARKER } from '@/vue/src/platforms/weex/util/index'
-import { createComponentInstanceForVnode } from '@/vue/src/core/vdom/create-component'
+import { warn } from 'core/util/debug'
+import { handleError } from 'core/util/error'
+import { RECYCLE_LIST_MARKER } from 'weex/util/index'
+import { createComponentInstanceForVnode } from 'core/vdom/create-component'
 import { resolveVirtualComponent } from './virtual-component'
 
 export function isRecyclableComponent (vnode: VNodeWithData): boolean {

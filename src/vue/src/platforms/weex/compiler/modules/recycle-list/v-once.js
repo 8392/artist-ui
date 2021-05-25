@@ -1,6 +1,6 @@
 /* @flow */
 
-import { getAndRemoveAttr, addRawAttr } from '@/vue/src/compiler/helpers'
+import { getAndRemoveAttr, addRawAttr } from 'compiler/helpers'
 
 function containVOnce (el: ASTElement): boolean {
   for (const attr in el.attrsMap) {

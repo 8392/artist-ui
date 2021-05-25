@@ -1,21 +1,21 @@
 /* @flow */
 
-import { escape, isSSRUnsafeAttr } from '@/vue/src/platforms/web/server/util'
-import { isObject, extend } from '@/vue/src/shared/util'
-import { renderAttr } from '@/vue/src/platforms/web/server/modules/attrs'
-import { renderClass } from '@/vue/src/platforms/web/util/class'
-import { genStyle } from '@/vue/src/platforms/web/server/modules/style'
-import { normalizeStyleBinding } from '@/vue/src/platforms/web/util/style'
+import { escape, isSSRUnsafeAttr } from 'web/server/util'
+import { isObject, extend } from 'shared/util'
+import { renderAttr } from 'web/server/modules/attrs'
+import { renderClass } from 'web/util/class'
+import { genStyle } from 'web/server/modules/style'
+import { normalizeStyleBinding } from 'web/util/style'
 
 import {
   normalizeChildren,
   simpleNormalizeChildren
-} from '@/vue/src/core/vdom/helpers/normalize-children'
+} from 'core/vdom/helpers/normalize-children'
 
 import {
   propsToAttrMap,
   isRenderableAttr
-} from '@/vue/src/platforms/web/server/util'
+} from 'web/server/util'
 
 const ssrHelpers = {
   _ssrEscape: escape,
@@ -48,7 +48,7 @@ class StringNode {
   close: ?string;
   children: ?Array<any>;
 
-  constructor(
+  constructor (
     open: string,
     close?: string,
     children?: Array<any>,

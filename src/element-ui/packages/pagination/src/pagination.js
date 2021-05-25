@@ -16,9 +16,9 @@ export default {
 
     small: Boolean,
 
-    total: Number,
+    total: Number,  //总条数
 
-    pageCount: Number,
+    pageCount: Number,  //页数
 
     pagerCount: {
       type: Number,

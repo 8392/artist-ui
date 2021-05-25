@@ -1,9 +1,9 @@
 /* @flow */
 
-import { camelize } from '@/vue/src/shared/util'
+import { camelize } from 'shared/util'
 import { generateBinding } from 'weex/util/parser'
-import { bindRE } from '@/vue/src/compiler/parser/index'
-import { getAndRemoveAttr, addRawAttr } from '@/vue/src/compiler/helpers'
+import { bindRE } from 'compiler/parser/index'
+import { getAndRemoveAttr, addRawAttr } from 'compiler/helpers'
 
 function parseAttrName (name: string): string {
   return camelize(name.replace(bindRE, ''))

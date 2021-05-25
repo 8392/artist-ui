@@ -10,7 +10,7 @@
  * components/slots/custom directives.
  */
 
-import { no, makeMap, isBuiltInTag } from '@/vue/src/shared/util'
+import { no, makeMap, isBuiltInTag } from 'shared/util'
 
 // optimizability constants
 export const optimizability = {

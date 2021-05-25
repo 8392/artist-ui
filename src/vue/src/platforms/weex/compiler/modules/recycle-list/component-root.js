@@ -1,6 +1,6 @@
 /* @flow */
 
-import { addAttr } from '@/vue/src/compiler/helpers'
+import { addAttr } from 'compiler/helpers'
 
 // mark component root nodes as
 export function postTransformComponentRoot (el: ASTElement) {

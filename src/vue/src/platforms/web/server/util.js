@@ -1,6 +1,6 @@
 /* @flow */
 
-import { makeMap } from '@/vue/src/shared/util'
+import { makeMap } from 'shared/util'
 
 const isAttr = makeMap(
   'accept,accept-charset,accesskey,action,align,alt,async,autocomplete,' +

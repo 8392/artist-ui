@@ -11,7 +11,6 @@ import ElementUI from './element-ui/src'
 import './element-ui/packages/theme-chalk/src/index.scss'
 // import './artist-ui/animate.css'
 import 'animate.css'
-import attrs from './vue/src/platforms/web/runtime/modules/attrs'
 
 Vue.config.productionTip = false
 
@@ -26,25 +25,25 @@ new Vue({
   router,
   store,
   // render: (h) => h(App),
-  // render: (h) => <App />,
-  components: {
-    // Test: render(h) {
-    //   return h('div', {}, 'AAA')
-    // }
-    Test: {
-      render(h) {
-        return h('div', {}, 'AAA')
-      }
-    }
-  },
-  render: (h) => {
-    return h('div', {
-      attrs: {
-        id: '#app'
-      }
-    }, [
-      <Test />,
-      h('div', {}, [<div>我来了</div>, h('div', {}, '哈哈哈')])
-    ])
-  }
+  render: (h) => <App />,
+  // components: {
+  //   // Test: render(h) {
+  //   //   return h('div', {}, 'AAA')
+  //   // }
+  //   Test: {
+  //     render(h) {
+  //       return h('div', {}, 'AAA')
+  //     }
+  //   }
+  // },
+  // render: (h) => {
+  //   return h('div', {
+  //     attrs: {
+  //       id: '#app'
+  //     }
+  //   }, [
+  //     <Test />,
+  //     h('div', {}, [<div>我来了</div>, h('div', {}, '哈哈哈')])
+  //   ])
+  // }
 }).$mount('#app')

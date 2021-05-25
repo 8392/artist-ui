@@ -1,8 +1,8 @@
 /* @flow */
 
-import { emptyNode } from '@/vue/src/core/vdom/patch'
-import { resolveAsset, handleError } from '@/vue/src/core/util/index'
-import { mergeVNodeHook } from '@/vue/src/core/vdom/helpers/index'
+import { emptyNode } from 'core/vdom/patch'
+import { resolveAsset, handleError } from 'core/util/index'
+import { mergeVNodeHook } from 'core/vdom/helpers/index'
 
 export default {
   create: updateDirectives,

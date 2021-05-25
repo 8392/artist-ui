@@ -1,7 +1,7 @@
 /* @flow */
 
-import { genStaticKeys } from '@/vue/src/shared/util'
-import { createCompiler } from '@/vue/src/compiler/index'
+import { genStaticKeys } from 'shared/util'
+import { createCompiler } from 'compiler/index'
 
 import modules from './modules/index'
 import directives from './directives/index'

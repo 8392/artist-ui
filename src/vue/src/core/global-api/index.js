@@ -6,9 +6,9 @@ import { initMixin } from './mixin'
 import { initExtend } from './extend'
 import { initAssetRegisters } from './assets'
 import { set, del } from '../observer/index'
-import { ASSET_TYPES } from '@/vue/src/shared/constants'
+import { ASSET_TYPES } from 'shared/constants'
 import builtInComponents from '../components/index'
-import { observe } from '@/vue/src/core/observer/index'
+import { observe } from 'core/observer/index'
 
 import {
   warn,
@@ -53,8 +53,8 @@ export function initGlobalAPI (Vue: GlobalAPI) {
 
   Vue.options = Object.create(null)
   ASSET_TYPES.forEach(type => {
-      Vue.options[type + 's'] = Object.create(null)
-    })
+    Vue.options[type + 's'] = Object.create(null)
+  })
 
   // this is used to identify the "base" constructor to extend all plain-object
   // components with in Weex's multi-instance scenarios.

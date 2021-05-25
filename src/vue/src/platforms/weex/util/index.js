@@ -1,7 +1,7 @@
 /* @flow */
 declare var document: WeexDocument;
 
-import { warn } from '@/vue/src/core/util/index'
+import { warn } from 'core/util/index'
 
 export const RECYCLE_LIST_MARKER = '@inRecycleList'
 

@@ -1,6 +1,6 @@
 /* @flow */
 
-import { looseEqual, looseIndexOf } from '@/vue/src/shared/util'
+import { looseEqual, looseIndexOf } from 'shared/util'
 
 // this is only applied for <select v-model> because it is the only edge case
 // that must be done at runtime instead of compile time.

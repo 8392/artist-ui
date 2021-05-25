@@ -1,8 +1,8 @@
 /* @flow */
 
-import { inBrowser, isIE9, warn } from '@/vue/src/core/util/index'
-import { mergeVNodeHook } from '@/vue/src/core/vdom/helpers/index'
-import { activeInstance } from '@/vue/src/core/instance/lifecycle'
+import { inBrowser, isIE9, warn } from 'core/util/index'
+import { mergeVNodeHook } from 'core/vdom/helpers/index'
+import { activeInstance } from 'core/instance/lifecycle'
 
 import {
   once,
@@ -10,7 +10,7 @@ import {
   isUndef,
   isObject,
   toNumber
-} from '@/vue/src/shared/util'
+} from 'shared/util'
 
 import {
   nextFrame,
