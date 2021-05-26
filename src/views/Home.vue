@@ -69,9 +69,11 @@ export default {
     InputTest,
     homeRende,
     testVnode: {
-      render: (h) => {
+      render(h) {
+        // console.log("AA", this.$parent.createDom())
         return <div>
           22
+          {this.$parent.createDom()}
         </div>
       }
     }
