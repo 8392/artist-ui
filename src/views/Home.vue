@@ -111,10 +111,21 @@ export default {
       console.log('handleKeyup')
     },
     createDom () {
+      const testVal = {
+        render(h) {
+          console.log("tets", this)
+          return <div>{this.age}</div>
+        },
+        data() {
+          return {
+            age: 22
+          }
+        } 
+      }
       const data = this.$createElement('div', {
 
-      }, '你好啊')
-      console.log("打印", data)
+      }, ['你好啊AA', <testVal />])
+      // console.log("打印", data)
       return data
     }
   }
