@@ -6,6 +6,7 @@ import poper from '../views/poper.vue'
 import treePage from '../views/treePage/index.vue'
 import tab from '../views/tab/index.vue'
 import ele from '../views/components/ele.vue'
+import dayFill from '../views/dayFill/index.vue'
 
 Vue.use(VueRouter)
 
@@ -39,6 +40,11 @@ const routes = [
     path: '/ele',
     name: 'ele',
     component: ele
+  },
+  {
+    path: '/dayFill',
+    name: 'dayFill',
+    component: dayFill
   },
   {
     path: '/about',

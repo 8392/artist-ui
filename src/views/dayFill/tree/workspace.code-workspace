@@ -1,0 +1,51 @@
+{
+	"folders": [
+		{
+			"name": "nodejs-myblog",
+			"path": "..\\..\\..\\..\\..\\node\\nodejs-myblog"
+		},
+		{
+			"name": "node-elem-api",
+			"path": "..\\..\\..\\..\\..\\node-elem-api"
+		},
+		{
+			"name": "zhihu-api",
+			"path": "..\\..\\..\\..\\..\\zhihu-api"
+		},
+		{
+			"name": "SassMagic-master",
+			"path": "..\\..\\..\\..\\..\\SassMagic-master"
+		},
+		{
+			"name": "mogu-production",
+			"path": "..\\..\\..\\..\\..\\..\\资料\\mogu-production"
+		},
+		{
+			"name": "element-ui",
+			"path": "..\\..\\..\\..\\..\\scss\\node_modules\\element-ui"
+		},
+		{
+			"name": "scss",
+			"path": "..\\..\\..\\..\\..\\scss"
+		},
+		{
+			"name": "vue",
+			"path": "..\\..\\..\\..\\..\\..\\vue-analysis-master\\vue"
+		},
+		{
+			"name": "code",
+			"path": "..\\..\\..\\..\\..\\..\\资料\\code"
+		},
+		{
+			"name": "y48b3w",
+			"path": "..\\..\\..\\..\\..\\..\\资料\\y48b3w"
+		},
+		{
+			"name": "artist-ui",
+			"path": "..\\..\\..\\.."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "artist-ui"
+	}
+}

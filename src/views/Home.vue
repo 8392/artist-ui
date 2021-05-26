@@ -52,6 +52,9 @@
         <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
       </span>
     </el-dialog>
+    <el-button type="primary" plain @click="createDom">创建元素</el-button>
+    <testVnode />
+    <homeRende />
   </div>
 </template>
 
@@ -59,9 +62,20 @@
 
 import RepeatClick from '@/element-ui/src/directives/repeat-click'
 import InputTest from './inputTest'
+import homeRende from './homeRende'
 export default {
   name: 'Home',
-  components: {InputTest},
+  components: {
+    InputTest,
+    homeRende,
+    testVnode: {
+      render: (h) => {
+        return <div>
+          22
+        </div>
+      }
+    }
+  },
   directives: {
     repeatClick: RepeatClick
   },
@@ -93,8 +107,14 @@ export default {
     },
     handleKeyup () {
       console.log('handleKeyup')
-    }
+    },
+    createDom () {
+      const data = this.$createElement('div', {
 
+      }, '你好啊')
+      console.log("打印", data)
+      return data
+    }
   }
 }
 </script>

@@ -1,10 +1,5 @@
 import Vue from 'vue'
-<<<<<<< HEAD
 // import Vue from '@/vue/src/platforms/web/entry-runtime-with-compiler'
-=======
-// import Vue from '@/vue-src/platforms/web/runtime-with-compiler'
-// import Vue from '@/vue/dist/vue.esm.js'
->>>>>>> e1e281640e85d9ba0355848e6d6da51987fa7258
 import App from './App.vue'
 import router from '@/router'
 import store from './store'
