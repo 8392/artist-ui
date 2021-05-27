@@ -61,6 +61,9 @@ export default {
   created () {
     this.getRootData()
   },
+  mounted() {
+    // console.log("props", this.$props, this)
+  },
   methods: {
     getRootData () {
       const children = this.defaultProps.children

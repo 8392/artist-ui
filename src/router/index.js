@@ -7,6 +7,7 @@ import treePage from '../views/treePage/index.vue'
 import tab from '../views/tab/index.vue'
 import ele from '../views/components/ele.vue'
 import dayFill from '../views/dayFill/index.vue'
+import createEle from '../views/createEle/a.js'
 
 Vue.use(VueRouter)
 
@@ -45,6 +46,11 @@ const routes = [
     path: '/dayFill',
     name: 'dayFill',
     component: dayFill
+  },
+  {
+    path: '/createEle',
+    name: 'createEle',
+    component: createEle
   },
   {
     path: '/about',

@@ -69,8 +69,13 @@ export default {
     InputTest,
     homeRende,
     testVnode: {
+      name: 'age-caibo',
       render(h) {
         // console.log("AA", this.$parent.createDom())
+        // {this.$parent.createDom()}
+          // <Com />
+          console.log("打印租价", this.$children)
+        const Com = this.$parent.createDom()
         return <div>
           22
           {this.$parent.createDom()}
@@ -111,21 +116,46 @@ export default {
       console.log('handleKeyup')
     },
     createDom () {
+      
       const testVal = {
+        nameXx: '哈哈哈',
         render(h) {
-          console.log("tets", this)
-          return <div>{this.age}</div>
+          // console.log("tets", this)
+          return <div ref='valDiv'>{this.age}</div>
+        },
+        mounted() {
+          // console.log("执行mounted", this.$refs.valDiv)
+          console.log("打印", this)
         },
         data() {
           return {
-            age: 22
+            age: 2266
           }
         } 
       }
-      const data = this.$createElement('div', {
 
-      }, ['你好啊AA', <testVal />])
-      // console.log("打印", data)
+      const data = this.$createElement('div', {
+        nameAAA: 'aaa'
+      }, ['你好啊AA', <testVal ref='testRef' />])
+
+      // console.log("打印组件", this.$children[5])
+
+      // const data = {
+      //   render(h) {
+      //     // console.log("tets", this)
+      //     return <div>
+      //       <testVal city='成都' ref='dataRef' />
+      //     </div>
+      //   },
+      //   mounted() {
+      //     // console.log("执行mounted", this.$refs.dataRef.age)
+      //   },
+      //   data() {
+      //     return {
+      //       age: 22
+      //     }
+      //   } 
+      // }
       return data
     }
   }

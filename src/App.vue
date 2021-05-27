@@ -21,7 +21,7 @@ export default {
   },
   mounted() {
     window.vm = this
-    console.log('this', this.$options.methods)
+    // console.log('this', this.$options.methods)
   },
   methods: {
 
