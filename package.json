@@ -10,6 +10,7 @@
   "dependencies": {
     "@popperjs/core": "^2.9.2",
     "animate.css": "^4.1.1",
+    "array-tree-filter": "^2.1.0",
     "async-validator": "~1.8.1",
     "babel-helper-vue-jsx-merge-props": "^2.0.0",
     "core-js": "^3.6.5",

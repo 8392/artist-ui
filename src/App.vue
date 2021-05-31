@@ -12,6 +12,29 @@
   </div>
 </template>
 <script>
+import arrayTreeFilter from 'array-tree-filter';
+
+const data = [{
+  value: 'a',
+  children: [{
+    value: 'b',
+    children: [{
+      value: 'c',
+      children: [{
+        value: 'f'
+      }]
+    }]
+  }],
+}];
+
+const values = ['a', 'b', 'c', 'f'];
+const result = arrayTreeFilter(data, (item, level) => {
+  console.log("item", item, level)
+  return item.value === values[level]
+});
+
+console.log(result);
+
 export default {
   componentName: 'appName',
   data() {
